@@ -12,6 +12,7 @@ import './images/turing-logo.png'
 // An example of how you tell webpack to use a JS file
 
 import userData from './data/users';
+console.log('test');
 import UserRepository from './UserRepository';
 
 const userRepository = new UserRepository(userData);
