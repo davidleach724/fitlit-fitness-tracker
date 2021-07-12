@@ -1,13 +1,26 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const User = require('../src/User');
+import User from '../src/User';
 
 describe('User', function() {
   let currentUser;
   beforeEach(() =>  {
-    currentUser = new User(2, 'Jarvis Considine', "30086 Kathryn Port, Ciceroland NE 07273", "Dimitri.Bechtelar11@gmail.com", 4.5, 5000,[9,18, 24, 19]);
-  })
+    currentUser = new User({
+      "id": 2,
+      "name": "Jarvis Considine",
+      "address": "30086 Kathryn Port, Ciceroland NE 07273",
+      "email": "Dimitri.Bechtelar11@gmail.com",
+      "strideLength": 4.5,
+      "dailyStepGoal": 5000,
+      "friends": [
+        9,
+        18,
+        24,
+        19
+      ]
+    });
+  });
 
   it('should be a function', function() {
 
@@ -52,6 +65,11 @@ describe('User', function() {
   it('should store the friends of the user', function() {
 
     expect(currentUser.friends).to.deep.equal([9,18, 24, 19]);
+  });
+
+  it('should return  the users first name', function() {
+
+    expect(currentUser.showFirstName()).to.equal('Jarvis');
   });
 
 });

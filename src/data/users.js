@@ -677,8 +677,5 @@ const userData = [
   }
 ];
 
-<<<<<<< HEAD
+
 export default userData;
-=======
-export default userData;
->>>>>>> 2fec91cac43380e3fc6dd799085ad08055155d84

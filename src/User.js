@@ -3,12 +3,13 @@ class User {
     this.id = userInfo.id;
     this.name = userInfo.name;
     this.email = userInfo.email;
+    this.address = userInfo.address;
     this.strideLength = userInfo.strideLength;
     this.dailyStepGoal =  userInfo.dailyStepGoal;
     this.friends = userInfo.friends;
   }
   showFirstName() {
-    // consol.log()
+    return this.name.split(' ')[0];
   }
 }
 
