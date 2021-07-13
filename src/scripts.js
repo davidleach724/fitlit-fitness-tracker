@@ -12,8 +12,12 @@ import './images/turing-logo.png'
 // An example of how you tell webpack to use a JS file
 
 import userData from './data/users';
-console.log('test');
+import domUpdates from './domUpdates';
 import UserRepository from './UserRepository';
+import User from './User';
+
+let userInfo = document.getElementById('userInfo');
+
 
 const userRepository = new UserRepository(userData);
 
@@ -22,7 +26,11 @@ const getRandomUser = (array) => {
 }
 
 const randomID = getRandomUser(userData);
+// console.log(userRepository.getUserData(randomID));
+// console.log(userRepository.calculateAverageStepGoal());
+// const ramdonUser = userRepository.getUserData(randomID)
 
-console.log(userRepository.getUserData(randomID));
+const currentUser = new User(userRepository.getUserData(randomID));
+console.log('currentUser', currentUser);
 
-console.log(userRepository.calculateAverageStepGoal());
+domUpdates.displayUserInfo(userInfo, currentUser);
