@@ -22,15 +22,20 @@ let userInfo = document.getElementById('userInfo');
 const userRepository = new UserRepository(userData);
 
 const getRandomUser = (array) => {
-  return Math.floor(Math.random() * array.length);
+  let num = Math.floor(Math.random() * array.length);
+  if(num === 0) {
+    getRandomUser(array);
+  }
+  return num;
 }
 
 const randomID = getRandomUser(userData);
+console.log(randomID);
 // console.log(userRepository.getUserData(randomID));
-// console.log(userRepository.calculateAverageStepGoal());
+const averageStepGoal = userRepository.calculateAverageStepGoal();
 // const ramdonUser = userRepository.getUserData(randomID)
 
 const currentUser = new User(userRepository.getUserData(randomID));
 console.log('currentUser', currentUser);
 
-domUpdates.displayUserInfo(userInfo, currentUser);
+domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);

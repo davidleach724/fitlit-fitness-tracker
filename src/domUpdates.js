@@ -1,5 +1,5 @@
 let domUpdates = {
-  displayUserInfo(userInfo, currentUser) {
+  displayUserInfo(userInfo, currentUser, averageStepGoal) {
     userInfo.innerHTML = '';
     userInfo.insertAdjacentHTML('beforebegin',
     `
@@ -11,6 +11,7 @@ let domUpdates = {
       <p>${currentUser.strideLength}</p>
       <p>${currentUser.dailyStepGoal}</p>
       <p>${currentUser.friends}</p>
+      <p>User step goal: ${currentUser.dailyStepGoal} vs. average step goal ${averageStepGoal}</p>
     </div>
     `)
   }
