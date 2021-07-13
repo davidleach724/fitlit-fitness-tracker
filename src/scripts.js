@@ -16,6 +16,8 @@ import domUpdates from './domUpdates';
 import UserRepository from './UserRepository';
 import User from './User';
 
+let userInfo = document.getElementById('userInfo');
+
 
 const userRepository = new UserRepository(userData);
 
@@ -26,6 +28,9 @@ const getRandomUser = (array) => {
 const randomID = getRandomUser(userData);
 // console.log(userRepository.getUserData(randomID));
 // console.log(userRepository.calculateAverageStepGoal());
+// const ramdonUser = userRepository.getUserData(randomID)
 
-const currentUser = new User(randomID);
+const currentUser = new User(userRepository.getUserData(randomID));
 console.log('currentUser', currentUser);
+
+domUpdates.displayUserInfo(userInfo, currentUser);
