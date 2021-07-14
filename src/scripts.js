@@ -15,6 +15,7 @@ import './images/turing-logo.png';
 import domUpdates from './domUpdates';
 import UserRepository from './UserRepository';
 import User from './User';
+import Hydration from './Hydration';
 
 let userInfo = document.getElementById('userInfo');
 
