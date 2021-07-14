@@ -18,21 +18,35 @@ import User from './User';
 
 let userInfo = document.getElementById('userInfo');
 
-fetch('http://localhost:3001/api/v1/users')
+const callAllData = (file) => {  
+  fetch(`http://localhost:3001/api/v1/${file}`)
   .then((response) => response.json())
   .then((data) => {
-    const userRepository = new UserRepository(data.userData);
-    const randomID = getRandomUser(data.userData);
-    const averageStepGoal = userRepository.calculateAverageStepGoal();
-    const currentUser = new User(userRepository.getUserData(randomID));
-    domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
+    if (file === 'users') {getUserData(data);}
+    if (file === 'hydration') {getHydrationData(data);}
+    if (file === 'sleep') {getSleepData(data);}
+    if (file === 'activity') {getActivityData(data);}
   });
+}
 
-// const userRepository = new UserRepository(userData);
+const getUserData = (data) => {
+  const userRepository = new UserRepository(data.userData);
+  const randomID = getRandomUser(data.userData);
+  const averageStepGoal = userRepository.calculateAverageStepGoal();
+  const currentUser = new User(userRepository.getUserData(randomID));
+  domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
+};
 
 const getRandomUser = (array) => {
   return Math.floor(Math.random() * array.length + 1);
 };
+
+callAllData('users');
+callAllData('hydration');
+callAllData('sleep');
+callAllData('activity');
+
+// const userRepository = new UserRepository(userData);
 
 // const randomID = getRandomUser(userData);
 // console.log(randomID);
