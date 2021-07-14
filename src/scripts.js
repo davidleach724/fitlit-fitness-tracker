@@ -5,37 +5,42 @@
 import './css/styles.css';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
+import './images/turing-logo.png';
 
 //console.log('This is the JavaScript entry file - your code begins here.');
 
 // An example of how you tell webpack to use a JS file
 
-import userData from './data/users';
+//import userData from './data/users';
 import domUpdates from './domUpdates';
 import UserRepository from './UserRepository';
 import User from './User';
 
 let userInfo = document.getElementById('userInfo');
 
+fetch('http://localhost:3001/api/v1/users')
+  .then((response) => response.json())
+  .then((data) => {
+    const userRepository = new UserRepository(data.userData);
+    const randomID = getRandomUser(data.userData);
+    const averageStepGoal = userRepository.calculateAverageStepGoal();
+    const currentUser = new User(userRepository.getUserData(randomID));
+    domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
+  });
 
-const userRepository = new UserRepository(userData);
+// const userRepository = new UserRepository(userData);
 
 const getRandomUser = (array) => {
-  let num = Math.floor(Math.random() * array.length);
-  if(num === 0) {
-    getRandomUser(array);
-  }
-  return num;
-}
+  return Math.floor(Math.random() * array.length + 1);
+};
 
-const randomID = getRandomUser(userData);
-console.log(randomID);
+// const randomID = getRandomUser(userData);
+// console.log(randomID);
 // console.log(userRepository.getUserData(randomID));
-const averageStepGoal = userRepository.calculateAverageStepGoal();
+// const averageStepGoal = userRepository.calculateAverageStepGoal();
 // const ramdonUser = userRepository.getUserData(randomID)
 
-const currentUser = new User(userRepository.getUserData(randomID));
-console.log('currentUser', currentUser);
+// const currentUser = new User(userRepository.getUserData(randomID));
+// console.log('currentUser', currentUser);
 
-domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
+// domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
