@@ -18,7 +18,7 @@ import User from './User';
 
 let userInfo = document.getElementById('userInfo');
 
-const callAllData = (file) => {  
+const callAllData = (file) => {
   fetch(`http://localhost:3001/api/v1/${file}`)
   .then((response) => response.json())
   .then((data) => {
