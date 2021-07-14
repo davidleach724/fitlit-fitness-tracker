@@ -10,8 +10,7 @@ import userData from '../src/data/users';
 describe('Hydration', function() {
 let hydration ;
   beforeEach(() =>  {
-    hydration = new Hydration(hydrationData)
-
+    hydration = new Hydration(hydrationData);
   });
 
   it('should be a function', function() {
@@ -20,9 +19,18 @@ let hydration ;
   });
 
   it('should be an instance of Hydration', function() {
-    console.log(hydrationData)
 
     expect(hydration).to.be.an.instanceof(Hydration);
+  });
+
+  it('should have a property to storage all the hydration data', function() {
+
+    expect(hydration.hydrationInfo).to.be.equal(hydrationData);
+  });
+
+  it('should filter the data based on the user id', function() {
+
+    expect(hydration.findUserHydration(1).length).to.be.equal(11)
   });
 
 });
