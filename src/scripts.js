@@ -37,6 +37,18 @@ const getUserData = (data) => {
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
 };
 
+const getHydrationData = (data) => {
+  console.log('hydration', data.hydrationData);
+}
+
+const getSleepData = (data) => {
+  console.log('sleep', data.sleepData);
+}
+
+const getActivityData = (data) => {
+  console.log('activity', data.activityData);
+}
+
 const getRandomUser = (array) => {
   return Math.floor(Math.random() * array.length + 1);
 };
