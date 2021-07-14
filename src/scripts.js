@@ -57,16 +57,3 @@ callAllData('users');
 callAllData('hydration');
 callAllData('sleep');
 callAllData('activity');
-
-// const userRepository = new UserRepository(userData);
-
-// const randomID = getRandomUser(userData);
-// console.log(randomID);
-// console.log(userRepository.getUserData(randomID));
-// const averageStepGoal = userRepository.calculateAverageStepGoal();
-// const ramdonUser = userRepository.getUserData(randomID)
-
-// const currentUser = new User(userRepository.getUserData(randomID));
-// console.log('currentUser', currentUser);
-
-// domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
