@@ -3,3 +3,39 @@ body, html {
   background-repeat: no-repeat;
   height: 100%;
 }
+
+.user-info-display {
+  border: solid Black 2px;
+}
+
+.hydration-per-day {
+  border: solid Black 2px;
+}
+
+.hydration-per-week {
+  border: solid Black 2px;
+}
+
+.slept-hours-per-day {
+  border: solid Black 2px;
+}
+
+.slept-quality-per-day {
+  border: solid Black 2px;
+}
+
+.slept-hours-per-week {
+  border: solid Black 2px;
+}
+
+.slept-quality-per-week {
+  border: solid Black 2px;
+}
+
+.slept-hours-all {
+  border: solid Black 2px;
+}
+
+.slept-quality-all {
+  border: solid Black 2px;
+}
