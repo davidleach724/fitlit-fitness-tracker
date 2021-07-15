@@ -1,26 +1,24 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-import Hydration from '../src/Hydration';
-import User from '../src/User';
-import UserRepository from '../src/UserRepository';
+import Sleep from '../src/Sleep';
 import hydrationData from '../src/data/hydrationData';
-import userData from '../src/data/users';
+
 
 describe('Hydration', function() {
-let hydration ;
+let sleep ;
   beforeEach(() =>  {
-    hydration = new Hydration(hydrationData, 1);
+    sleep = new Hydration(sleep, 1);
   });
 
   it('should be a function', function() {
 
-    expect(Hydration).to.be.a('function');
+    expect(Sleep).to.be.a('function');
   });
 
   it('should be an instance of Hydration', function() {
 
-    expect(hydration).to.be.an.instanceof(Hydration);
+    expect(sleep).to.be.an.instanceof(Sleep);
   });
 
   it('should have a property to storage all the hydration data', function() {
