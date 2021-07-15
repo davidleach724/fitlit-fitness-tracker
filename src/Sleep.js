@@ -1,6 +1,6 @@
 class Sleep {
   constructor(sleepInfo, currentID) {
-    this.sleepInfo = sleepInfo; //add .sleepData when using API data
+    this.sleepInfo = sleepInfo.sleepData;
     this.currentUserID = currentID;
     this.currentUser = this.findUserSleep();
   }
