@@ -1,10 +1,6 @@
 class Sleep {
   constructor(sleepInfo, currentID) {
-<<<<<<< HEAD
-    this.sleepInfo = sleepInfo.sleepData
-=======
     this.sleepInfo = sleepInfo.sleepData;
->>>>>>> 97cd1c700f7f7f05924b6e5d79453d59b0e6824a
     this.currentUserID = currentID;
     this.currentUser = this.findUserSleep();
   }
