@@ -15,7 +15,7 @@ import domUpdates from './domUpdates';
 import UserRepository from './UserRepository';
 import User from './User';
 import Hydration from './Hydration';
-import Sleep from './data/sleepData';
+import Sleep from './Sleep';
 
 let userInfo = document.getElementById('userInfo');
 let date = '2020/01/22'
@@ -45,10 +45,10 @@ const getHydrationData = (data) => {
   const hydrationAverage = hydrationData.findHydrationAverage();
   const hydrationToday = hydrationData.findCurrentHydration(date);
   const hydrationWeek = hydrationData.findOuncesPerWeek();
-  // console.log('hydration data: ', hydrationData);
-  // console.log('hydration avg: ', hydrationAverage);
-  // console.log('hydration today: ', hydrationToday);
-  // console.log('hydration week: ', hydrationWeek);
+  console.log('hydration data: ', hydrationData);
+  console.log('hydration avg: ', hydrationAverage);
+  console.log('hydration today: ', hydrationToday);
+  console.log('hydration week: ', hydrationWeek);
 }
 
 const getSleepData = (data) => {
