@@ -90,7 +90,7 @@ const getSleepData = (data) => {
  console.log('sleep class: ', sleepData);
  console.log('sleep hours for date: ', sleepHoursDate);
  console.log('sleep quality for date: ', sleepQualityDate)
- console.log('sleep week: ', sleepWeek);
+ console.log('sleep week: ', sleepHoursWeek);
  console.log('sleep hour avg: ', sleepHourAverage);
  console.log('sleep qual avg: ', sleepQualityAverage);
 }
