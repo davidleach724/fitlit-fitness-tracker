@@ -1,6 +1,6 @@
 class Hydration {
   constructor(hydrationInfo, currentID) {
-    this.hydrationInfo = hydrationInfo.sleepData;
+    this.hydrationInfo = hydrationInfo.hydrationData;
     this.currentUserID = currentID;
     this.currentUser = this.findUserHydration();
   }
