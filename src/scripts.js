@@ -18,6 +18,8 @@ import User from './User';
 import Hydration from './Hydration';
 
 let userInfo = document.getElementById('userInfo');
+let date = '2020/01/22'
+let randomID;
 
 const callAllData = (file) => {
   fetch(`http://localhost:3001/api/v1/${file}`)
@@ -32,22 +34,30 @@ const callAllData = (file) => {
 
 const getUserData = (data) => {
   const userRepository = new UserRepository(data.userData);
-  const randomID = getRandomUser(data.userData);
+  randomID = getRandomUser(data.userData);
+  console.log('id in user: ', randomID);
   const averageStepGoal = userRepository.calculateAverageStepGoal();
   const currentUser = new User(userRepository.getUserData(randomID));
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
 };
 
 const getHydrationData = (data) => {
-  console.log('hydration', data.hydrationData);
+  const hydrationData = new Hydration(data, randomID);
+  const hydrationAverage = hydrationData.findHydrationAverage();
+  const hydrationToday = hydrationData.findCurrentHydration(date);
+  const hydrationWeek = hydrationData.findOuncesPerWeek();
+  console.log('hydration data: ', hydrationData);
+  console.log('hydration avg: ', hydrationAverage);
+  console.log('hydration today: ', hydrationToday);
+  console.log('hydration week: ', hydrationWeek);
 }
 
 const getSleepData = (data) => {
-  console.log('sleep', data.sleepData);
+ // console.log('sleep', data.sleepData);
 }
 
 const getActivityData = (data) => {
-  console.log('activity', data.activityData);
+ // console.log('activity', data.activityData);
 }
 
 const getRandomUser = (array) => {
