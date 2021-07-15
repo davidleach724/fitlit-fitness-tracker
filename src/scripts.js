@@ -18,6 +18,7 @@ import User from './User';
 import Hydration from './Hydration';
 
 let userInfo = document.getElementById('userInfo');
+let randomID;
 
 const callAllData = (file) => {
   fetch(`http://localhost:3001/api/v1/${file}`)
@@ -32,14 +33,18 @@ const callAllData = (file) => {
 
 const getUserData = (data) => {
   const userRepository = new UserRepository(data.userData);
-  const randomID = getRandomUser(data.userData);
+  randomID = getRandomUser(data.userData);
+  console.log('id in user: ', randomID);
   const averageStepGoal = userRepository.calculateAverageStepGoal();
   const currentUser = new User(userRepository.getUserData(randomID));
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
 };
 
 const getHydrationData = (data) => {
-  console.log('hydration', data.hydrationData);
+  //console.log('id in h20: ', randomID);
+  //console.log('hydration all', data.hydrationData);
+  const hydrationData = new Hydration(data, randomID);
+  //console.log('h20 class', hydrationData);
 }
 
 const getSleepData = (data) => {
