@@ -41,18 +41,23 @@ const getUserData = (data) => {
 };
 
 const getHydrationData = (data) => {
-  //console.log('id in h20: ', randomID);
-  //console.log('hydration all', data.hydrationData);
   const hydrationData = new Hydration(data, randomID);
+  console.log('id in h20: ', randomID);
+  console.log(hydrationData);
+  console.log(hydrationData.findHydrationAverage());
+  //console.log(hydrationData.findUserHydration(randomID));
+  // hydrationData.findUserHydration(randomID);
+  // console.log('hydrationdata: ', hydrationData);
+  //console.log('hydration all', data.hydrationData);
   //console.log('h20 class', hydrationData);
 }
 
 const getSleepData = (data) => {
-  console.log('sleep', data.sleepData);
+ // console.log('sleep', data.sleepData);
 }
 
 const getActivityData = (data) => {
-  console.log('activity', data.activityData);
+ // console.log('activity', data.activityData);
 }
 
 const getRandomUser = (array) => {
