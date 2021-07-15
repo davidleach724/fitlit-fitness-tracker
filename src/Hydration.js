@@ -1,20 +1,20 @@
 class Hydration {
   constructor(hydrationInfo, currentID) {
-    this.hydrationInfo = hydrationInfo;
+    this.hydrationInfo = hydrationInfo.hydrationData;
     this.currentUserID = currentID;
+    this.currentUser = this.findUserHydration();
   }
 
-  findUserHydration(id) {
-    return this.hydrationInfo.filter(user => user.userID === id);
+  findUserHydration() {
+    return this.hydrationInfo.filter(user => user.userID === this.currentUserID);
   }
 
   findHydrationAverage() {
-    let currentUser = this.findUserHydration(this.currentUserID);
-    let totalHydration = currentUser.reduce((acc, elem) => {
+    let totalHydration = this.currentUser.reduce((acc, elem) => {
       acc += elem.numOunces;
       return acc;
     }, 0);
-    return Math.round(totalHydration / currentUser.length);
+    return Math.round(totalHydration / this.currentUser.length);
   }
 
   findCurrentHydration(date) {
@@ -23,7 +23,7 @@ class Hydration {
     }).numOunces;
   }
   
-  findOuncesPerWeek(id) {
+  findOuncesPerWeek() {
     const hydrationWeek = this.currentUser.slice(-7);
     return hydrationWeek.map((info) => info.numOunces);
   }

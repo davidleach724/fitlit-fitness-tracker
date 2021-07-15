@@ -18,6 +18,7 @@ import User from './User';
 import Hydration from './Hydration';
 
 let userInfo = document.getElementById('userInfo');
+let date = '2020/01/22'
 let randomID;
 
 const callAllData = (file) => {
@@ -42,14 +43,13 @@ const getUserData = (data) => {
 
 const getHydrationData = (data) => {
   const hydrationData = new Hydration(data, randomID);
-  console.log('id in h20: ', randomID);
-  console.log(hydrationData);
-  console.log(hydrationData.findHydrationAverage());
-  //console.log(hydrationData.findUserHydration(randomID));
-  // hydrationData.findUserHydration(randomID);
-  // console.log('hydrationdata: ', hydrationData);
-  //console.log('hydration all', data.hydrationData);
-  //console.log('h20 class', hydrationData);
+  const hydrationAverage = hydrationData.findHydrationAverage();
+  const hydrationToday = hydrationData.findCurrentHydration(date);
+  const hydrationWeek = hydrationData.findOuncesPerWeek();
+  console.log('hydration data: ', hydrationData);
+  console.log('hydration avg: ', hydrationAverage);
+  console.log('hydration today: ', hydrationToday);
+  console.log('hydration week: ', hydrationWeek);
 }
 
 const getSleepData = (data) => {
