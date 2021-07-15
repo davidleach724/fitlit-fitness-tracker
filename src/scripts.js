@@ -11,11 +11,11 @@ import './images/turing-logo.png';
 
 // An example of how you tell webpack to use a JS file
 
-//import userData from './data/users';
 import domUpdates from './domUpdates';
 import UserRepository from './UserRepository';
 import User from './User';
 import Hydration from './Hydration';
+import Sleep from './data/sleepData';
 
 let userInfo = document.getElementById('userInfo');
 let date = '2020/01/22'
@@ -35,7 +35,6 @@ const callAllData = (file) => {
 const getUserData = (data) => {
   const userRepository = new UserRepository(data.userData);
   randomID = getRandomUser(data.userData);
-  console.log('id in user: ', randomID);
   const averageStepGoal = userRepository.calculateAverageStepGoal();
   const currentUser = new User(userRepository.getUserData(randomID));
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
@@ -46,14 +45,25 @@ const getHydrationData = (data) => {
   const hydrationAverage = hydrationData.findHydrationAverage();
   const hydrationToday = hydrationData.findCurrentHydration(date);
   const hydrationWeek = hydrationData.findOuncesPerWeek();
-  console.log('hydration data: ', hydrationData);
-  console.log('hydration avg: ', hydrationAverage);
-  console.log('hydration today: ', hydrationToday);
-  console.log('hydration week: ', hydrationWeek);
+  // console.log('hydration data: ', hydrationData);
+  // console.log('hydration avg: ', hydrationAverage);
+  // console.log('hydration today: ', hydrationToday);
+  // console.log('hydration week: ', hydrationWeek);
 }
 
 const getSleepData = (data) => {
- // console.log('sleep', data.sleepData);
+ const sleepData = new Sleep(data, randomID);
+ const sleepHoursDate = sleepData.findCurrentSleepHours(date);
+ const sleepQualityDate = sleepData.findCurrentSleepQuality(date);
+ const sleepWeek = sleepData.findSleepWeek();
+ const sleepHourAverage = sleepData.findSleepHourAverage();
+ const sleepQualityAverage = sleepData.findSleepQualityAverage();
+ console.log('sleep class: ', sleepData);
+ console.log('sleep hours for date: ', sleepHoursDate);
+ console.log('sleep quality for date: ', sleepQualityDate)
+ console.log('sleep week: ', sleepWeek);
+ console.log('sleep hour avg: ', sleepHourAverage);
+ console.log('sleep qual avg: ', sleepQualityAverage);
 }
 
 const getActivityData = (data) => {
