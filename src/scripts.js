@@ -21,9 +21,15 @@ import Sleep from './Sleep';
 
 // DOM ELEMENTS
 let userInfo = document.getElementById('userInfo');
-let hydrationInfo = document.getElementById('hydrationInfo');
-let sleepInfo = document.getElementById('sleepInfo');
-let activityInfo = document.getElementById('activityInfo');
+let hydrationAvgDay = document.getElementById('hydrationAvgDay');
+let hydrationAvgWeek = document.getElementById('hydrationAvgWeek');
+let sleepHoursLastDay = document.getElementById('sleepHoursLastDay');
+let sleepQualityLastDay = document.getElementById('sleepQualityLastDay');
+let sleepHoursLastWeek = document.getElementById('sleepHoursLastWeek');
+let sleepQualityLastWeek = document.getElementById('sleepQualityLastWeek');
+let sleepHoursAllTime = document.getElementById('sleepHoursAllTime');
+let sleepQualityAllTime = document.getElementById('sleepQualityAllTime');
+
 
 
 
@@ -59,8 +65,8 @@ const getHydrationData = (data) => {
   const hydrationAverage = hydrationData.findHydrationAverage();
   const hydrationToday = hydrationData.findCurrentHydration(date);
   const hydrationWeek = hydrationData.findOuncesPerWeek();
-  domUpdates.displayHydrationPerDay(hydrationInfo, hydrationToday);
-  domUpdates.displayHydrationPerWeek(hydrationInfo, hydrationWeek);
+  domUpdates.displayHydrationPerDay(hydrationAvgDay, hydrationToday);
+  domUpdates.displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek);
   console.log('hydration data: ', hydrationData);
   console.log('hydration avg: ', hydrationAverage);
   console.log('hydration today: ', hydrationToday);
@@ -71,9 +77,16 @@ const getSleepData = (data) => {
  const sleepData = new Sleep(data, randomID);
  const sleepHoursDate = sleepData.findCurrentSleepHours(date);
  const sleepQualityDate = sleepData.findCurrentSleepQuality(date);
- const sleepWeek = sleepData.findSleepWeek();
+ const sleepHoursWeek = sleepData.findSleepWeek();
+ const sleepQualityWeek = sleepData.findSleepQualityWeek()
  const sleepHourAverage = sleepData.findSleepHourAverage();
  const sleepQualityAverage = sleepData.findSleepQualityAverage();
+ domUpdates.displaySleptHoursPerDay(sleepHoursLastDay, sleepHoursDate);
+ domUpdates.displaySleptQualityPerDay(sleepQualityLastDay, sleepQualityDate);
+ domUpdates.displaySleptHoursPerWeek(sleepHoursLastWeek, sleepHoursWeek);
+ domUpdates.displaySleptQualityPerWeek(sleepQualityLastWeek, sleepQualityWeek);
+ domUpdates.displaySleptHoursAll(sleepHoursAllTime, sleepHourAverage);
+ domUpdates.displaySleptQualityAll(sleepQualityAllTime, sleepQualityAverage);
  console.log('sleep class: ', sleepData);
  console.log('sleep hours for date: ', sleepHoursDate);
  console.log('sleep quality for date: ', sleepQualityDate)

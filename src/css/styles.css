@@ -3,3 +3,15 @@ body, html {
   background-repeat: no-repeat;
   height: 100%;
 }
+
+.user-info-display {
+  border: solid Black 2px;
+}
+
+.hydration-per-day {
+  border: solid Black 2px;
+}
+
+.hydration-per-week {
+  border: solid Black 2px;
+}

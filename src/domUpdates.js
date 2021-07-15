@@ -13,31 +13,36 @@ let domUpdates = {
       <p>${currentUser.friends}</p>
     </div>
     `)
-  };
+  },
 
-  displayHydrationPerDay(hydrationInfo, hydrationToday) {
-    hydrationInfo.innerHTML = '';
-    hydrationInfo.insertAdjacentHTML('afterbegin',
+  displayHydrationPerDay(hydrationAvgDay, hydrationToday) {
+    hydrationAvgDay.innerHTML = '';
+    hydrationAvgDay.insertAdjacentHTML('afterbegin',
     `
     <div class='hydration-per-day' id='hydrationPerDay'>
     <h3>The amount of water that you have cosumend today is:</h3>
     <p>${hydrationToday} oz</p>
     </div>
-    `
-    )
-  };
+    `)
+  },
 
-  displayHydrationPerWeek(hydrationInfo, hydrationWeek) {
-    hydrationInfo.innerHTML = '';
-    hydrationInfo.insertAdjacentHTML('beforeend',
+  displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek) {
+    hydrationAvgWeek.innerHTML = '';
+    hydrationAvgWeek.insertAdjacentHTML('afterbegin',
     `
     <div class='hydration-per-week' id='hydrationPerWeek'>
     <h3>The amount of water that you have cosumend during the week is:</h3>
-    <p>${hydrationWeek} oz</p>
+    <p>Monday: ${hydrationWeek[0]} oz</p>
+    <p>Tuesday: ${hydrationWeek[1]} oz</p>
+    <p>Wednesday: ${hydrationWeek[2]} oz</p>
+    <p>Thursday: ${hydrationWeek[3]} oz</p>
+    <p>Friday: ${hydrationWeek[4]} oz</p>
+    <p>Saturday: ${hydrationWeek[5]} oz</p>
+    <p>Sunday: ${hydrationWeek[6]} oz</p>
     </div>
-    `
-    )
-  };
-}
+    `)
+  }
+};
+
 
 export default domUpdates;
