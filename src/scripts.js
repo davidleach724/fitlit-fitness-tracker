@@ -17,7 +17,21 @@ import User from './User';
 import Hydration from './Hydration';
 import Sleep from './Sleep';
 
+
+
+// DOM ELEMENTS
 let userInfo = document.getElementById('userInfo');
+let hydrationInfo = document.getElementById('hydrationInfo');
+let sleepInfo = document.getElementById('sleepInfo');
+let activityInfo = document.getElementById('activityInfo');
+
+
+
+// EVENT LISTENERS
+
+
+
+// GLOBAL VARIABLES
 let date = '2020/01/22'
 let randomID;
 
@@ -45,6 +59,7 @@ const getHydrationData = (data) => {
   const hydrationAverage = hydrationData.findHydrationAverage();
   const hydrationToday = hydrationData.findCurrentHydration(date);
   const hydrationWeek = hydrationData.findOuncesPerWeek();
+  domUpdates.displayHydrationPerDay()
   console.log('hydration data: ', hydrationData);
   console.log('hydration avg: ', hydrationAverage);
   console.log('hydration today: ', hydrationToday);
