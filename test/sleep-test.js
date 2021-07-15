@@ -2,13 +2,13 @@ const chai = require('chai');
 const expect = chai.expect;
 
 import Sleep from '../src/Sleep';
-import hydrationData from '../src/data/hydrationData';
+import sleepData from '../src/data/hydrationData';
 
 
 describe('Hydration', function() {
 let sleep ;
   beforeEach(() =>  {
-    sleep = new Hydration(sleep, 1);
+    sleep = new Hydration(sleepData, 1);
   });
 
   it('should be a function', function() {
