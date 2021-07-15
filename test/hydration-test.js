@@ -10,7 +10,7 @@ import userData from '../src/data/users';
 describe('Hydration', function() {
 let hydration ;
   beforeEach(() =>  {
-    hydration = new Hydration(hydrationData);
+    hydration = new Hydration(hydrationData, 1);
   });
 
   it('should be a function', function() {
@@ -28,18 +28,15 @@ let hydration ;
     expect(hydration.hydrationInfo).to.be.equal(hydrationData);
   });
 
-  it('should filter the data based on the user id', function() {
-    hydration.calculateHydrationAverage();
+  it('should return average oz per day', () => {
 
-    expect(hydration.findUserHydration(1).length).to.be.equal(11)
-  });
+     expect(hydration.findHydrationAverage()).to.equal(65);
+   })
 
-  it('should should return how many ounces consumed for a specific day', function() {
+   it('should return todays current oz', () => {
 
-    // hydration.findOuncesPerWeek()
-
-    expect(hydration.findOncesBasedOnDay(1, "2019/06/15")).to.equal(37)
-  });
+     expect(hydration.findCurrentHydration("2019/06/25")).to.equal(51);
+   })
 
   it('should should return how many ounces consumed per week', function() {
 
