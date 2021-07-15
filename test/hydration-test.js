@@ -43,5 +43,4 @@ let hydration ;
     expect(hydration.findOuncesPerWeek(1)).to.deep.equal([ 42, 87, 94, 84, 39, 75, 51 ])
   });
 
-
 });

@@ -1,6 +1,6 @@
 class Hydration {
   constructor(hydrationInfo, currentID) {
-    this.hydrationInfo = hydrationInfo.hydrationData;
+    this.hydrationInfo = hydrationInfo.sleepData;
     this.currentUserID = currentID;
     this.currentUser = this.findUserHydration();
   }
@@ -22,7 +22,7 @@ class Hydration {
       return elem.date === date;
     }).numOunces;
   }
-  
+
   findOuncesPerWeek() {
     const hydrationWeek = this.currentUser.slice(-7);
     return hydrationWeek.map((info) => info.numOunces);
