@@ -29,8 +29,22 @@ let hydration ;
   });
 
   it('should filter the data based on the user id', function() {
+    hydration.calculateHydrationAverage();
 
     expect(hydration.findUserHydration(1).length).to.be.equal(11)
   });
+
+  it('should should return how many ounces consumed for a specific day', function() {
+
+    // hydration.findOuncesPerWeek()
+
+    expect(hydration.findOncesBasedOnDay(1, "2019/06/15")).to.equal(37)
+  });
+
+  it('should should return how many ounces consumed per week', function() {
+
+    expect(hydration.findOuncesPerWeek(1)).to.deep.equal([ 42, 87, 94, 84, 39, 75, 51 ])
+  });
+
 
 });
