@@ -1,7 +1,7 @@
 let domUpdates = {
   displayUserInfo(userInfo, currentUser) {
     userInfo.innerHTML = '';
-    userInfo.insertAdjacentHTML('beforebegin',
+    userInfo.insertAdjacentHTML('afterbegin',
     `
     <div class='user-info-display' id='userInfoDisplay'>
       <h1>Hello ${currentUser.showFirstName()}!!</h1
@@ -13,7 +13,31 @@ let domUpdates = {
       <p>${currentUser.friends}</p>
     </div>
     `)
-  }
+  };
+
+  displayHydrationPerDay(hydrationInfo, hydrationToday) {
+    hydrationInfo.innerHTML = '';
+    hydrationInfo.insertAdjacentHTML('afterbegin',
+    `
+    <div class='hydration-per-day' id='hydrationPerDay'>
+    <h3>The amount of water that you have cosumend today is:</h3>
+    <p>${hydrationToday} oz</p>
+    </div>
+    `
+    )
+  };
+
+  displayHydrationPerWeek(hydrationInfo, hydrationWeek) {
+    hydrationInfo.innerHTML = '';
+    hydrationInfo.insertAdjacentHTML('beforeend',
+    `
+    <div class='hydration-per-week' id='hydrationPerWeek'>
+    <h3>The amount of water that you have cosumend during the week is:</h3>
+    <p>${hydrationWeek} oz</p>
+    </div>
+    `
+    )
+  };
 }
 
 export default domUpdates;

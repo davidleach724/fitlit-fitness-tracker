@@ -59,7 +59,8 @@ const getHydrationData = (data) => {
   const hydrationAverage = hydrationData.findHydrationAverage();
   const hydrationToday = hydrationData.findCurrentHydration(date);
   const hydrationWeek = hydrationData.findOuncesPerWeek();
-  domUpdates.displayHydrationPerDay()
+  domUpdates.displayHydrationPerDay(hydrationInfo, hydrationToday);
+  domUpdates.displayHydrationPerWeek(hydrationInfo, hydrationWeek);
   console.log('hydration data: ', hydrationData);
   console.log('hydration avg: ', hydrationAverage);
   console.log('hydration today: ', hydrationToday);
