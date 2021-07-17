@@ -59,4 +59,12 @@ describe.only('Activity', () => {
     expect(activity.findAverageMinutesAll('2019/06/19')).to.equal(220);
   })
 
+  it('should return a weeks worth of steps for a user', () => {
+    expect(activity.findUserStepsWeek()).to.be.an('object');
+  })
+
+  it('should return a weeks worth of stairs for a user', () => {
+    expect(activity.findUserStairsWeek()).to.be.an('object');
+  })
+
 })

@@ -84,17 +84,25 @@ class Activity {
     return Math.floor(totalMinutesDate/activityDate.length)
   }
 
-  // return steps user vs. all users
-
-  // return minutes user vs. all users
-  
-  // return stairs user vs. all users
-
   // return week step count
+  findUserStepsWeek() {
+    let stepsWeek = this.currentUser.slice(-7).map((info) => info.numSteps)
+    let dateWeek = this.currentUser.slice(-7).map(info => info.date)
+    return {
+      'steps': stepsWeek,
+      'dates': dateWeek
+    }
+  }
 
   // return week stairs
-
-  // return week min active
+  findUserStairsWeek() {
+    let stairsWeek = this.currentUser.slice(-7).map((info) => info.flightsOfStairs)
+    let dateWeek = this.currentUser.slice(-7).map(info => info.date)
+    return {
+      'stairs': stairsWeek,
+      'dates': dateWeek
+    }
+  }
 
 }
 
