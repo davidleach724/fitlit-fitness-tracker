@@ -67,10 +67,10 @@ const getHydrationData = (data) => {
   const hydrationWeek = hydrationData.findOuncesPerWeek();
   domUpdates.displayHydrationPerDay(hydrationAvgDay, hydrationToday);
   domUpdates.displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek);
-  console.log('hydration data: ', hydrationData);
-  console.log('hydration avg: ', hydrationAverage);
-  console.log('hydration today: ', hydrationToday);
-  console.log('hydration week: ', hydrationWeek);
+  // console.log('hydration data: ', hydrationData);
+  // console.log('hydration avg: ', hydrationAverage);
+  // console.log('hydration today: ', hydrationToday);
+  // console.log('hydration week: ', hydrationWeek);
 }
 
 const getSleepData = (data) => {
@@ -87,12 +87,12 @@ const getSleepData = (data) => {
  domUpdates.displaySleptQualityPerWeek(sleepQualityLastWeek, sleepQualityWeek);
  domUpdates.displaySleptHoursAll(sleepHoursAllTime, sleepHourAverage);
  domUpdates.displaySleptQualityAll(sleepQualityAllTime, sleepQualityAverage);
- console.log('sleep class: ', sleepData);
- console.log('sleep hours for date: ', sleepHoursDate);
- console.log('sleep quality for date: ', sleepQualityDate)
- console.log('sleep week: ', sleepHoursWeek);
- console.log('sleep hour avg: ', sleepHourAverage);
- console.log('sleep qual avg: ', sleepQualityAverage);
+//  console.log('sleep class: ', sleepData);
+//  console.log('sleep hours for date: ', sleepHoursDate);
+//  console.log('sleep quality for date: ', sleepQualityDate)
+//  console.log('sleep week: ', sleepHoursWeek);
+//  console.log('sleep hour avg: ', sleepHourAverage);
+//  console.log('sleep qual avg: ', sleepQualityAverage);
 }
 
 const getActivityData = (data) => {

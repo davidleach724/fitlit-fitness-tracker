@@ -1,41 +1,86 @@
 body, html {
   background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
+  font-family: 'Roboto', sans-serif;
   height: 100%;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-data {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .user-info-display {
   border: solid Black 2px;
+  margin: 5px;
+  background: white;
 }
 
 .hydration-per-day {
   border: solid Black 2px;
+  margin: 5px;
+  background: white;
+  height: 150px;
+  width: 150px;
 }
 
 .hydration-per-week {
   border: solid Black 2px;
+  margin: 5px;
+  background: white;
+  height: 150px;
+  width: 400px;
 }
 
 .slept-hours-per-day {
   border: solid Black 2px;
+  margin: 5px;
+  background: white;
+  height: 150px;
+  width: 150px;
 }
 
 .slept-quality-per-day {
   border: solid Black 2px;
+  margin: 5px;
+  background: white;
+  height: 150px;
+  width: 150px;
 }
 
 .slept-hours-per-week {
   border: solid Black 2px;
+  margin: 5px;
+  background: white;
+  height: 150px;
+  width: 400px;
 }
 
 .slept-quality-per-week {
   border: solid Black 2px;
+  margin: 5px;
+  background: white;
+  height: 150px;
+  width: 400px;
 }
 
 .slept-hours-all {
   border: solid Black 2px;
+  margin: 5px;
+  background: white;
+  height: 150px;
+  width: 150px;
 }
 
 .slept-quality-all {
   border: solid Black 2px;
+  margin: 5px;
+  background: white;
+  height: 150px;
+  width: 150px;
 }

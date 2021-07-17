@@ -19,7 +19,7 @@ let domUpdates = {
     hydrationAvgDay.insertAdjacentHTML('afterbegin',
     `
     <div class='hydration-per-day' id='hydrationPerDay'>
-    <h3>The amount of water that you have cosumend today is:</h3>
+    <h3>Water Today</h3>
     <p>${hydrationToday} oz</p>
     </div>
     `)
@@ -29,7 +29,7 @@ let domUpdates = {
     hydrationAvgWeek.insertAdjacentHTML('afterbegin',
     `
     <div class='hydration-per-week' id='hydrationPerWeek'>
-    <h3>The amount of water that you have cosumend during the week is:</h3>
+    <h3>Water This Week</h3>
     <p>Monday: ${hydrationWeek[0]} oz</p>
     <p>Tuesday: ${hydrationWeek[1]} oz</p>
     <p>Wednesday: ${hydrationWeek[2]} oz</p>
@@ -45,7 +45,7 @@ let domUpdates = {
     sleepHoursLastDay.insertAdjacentHTML('afterbegin',
     `
     <div class='slept-hours-per-day' id='sleptHoursPerDay'>
-    <h3>The amount of hours slept for current date is:</h3>
+    <h3>Hours Slept</h3>
     <p>${sleepHoursDate} hrs</p>
     </div>
     `)
@@ -55,7 +55,7 @@ let domUpdates = {
     sleepQualityLastDay.insertAdjacentHTML('afterbegin',
     `
     <div class='slept-quality-per-day' id='sleptQualityPerDay'>
-    <h3>The amount of quality slept for current date is:</h3>
+    <h3>Sleep Quality</h3>
     <p>${sleepQualityDate} </p>
     </div>
     `)
