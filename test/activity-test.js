@@ -38,4 +38,10 @@ describe.only('Activity', () => {
     expect(activity.determineStepGoalMet(10000, '2019/06/19')).to.equal(false);
     expect(activity.determineStepGoalMet(5000, '2019/06/19')).to.equal(true);
   })
+
+  it('should return all dates step goal was met', () => {
+    expect(activity.findMetStepGoalDays(10000)).to.be.an('array');
+  })
+
+  
 })

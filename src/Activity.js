@@ -45,8 +45,12 @@ class Activity {
   }
 
   // return days step goal was met
+  findMetStepGoalDays(stepGoal) {
+    return this.currentUser.filter(user => user.numSteps >= stepGoal).map(user => user.date)
+  }
 
   // find all-time stair record
+  
 
   // return ALL USERS
     // average stairs for date
