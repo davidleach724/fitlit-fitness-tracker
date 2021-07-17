@@ -33,6 +33,11 @@ class Activity {
   findUserMinutes(date) {
     return this.currentUser.find((elem) => elem.date === date).minutesActive;
   }
+  
+  // return stairs for date
+  findUserStairs(date) {
+    return this.currentUser.find((elem) => elem.date === date).flightsOfStairs;
+  }
 
   // return average active minutes for week
   findUserMinutesWeek() {

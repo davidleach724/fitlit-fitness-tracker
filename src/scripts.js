@@ -101,15 +101,13 @@ const getSleepData = (data) => {
 const getActivityData = (data) => {
   const activityData = new Activity(data, randomID);
   const stepsDate = activityData.findUserSteps(date);
-  const milesWalked = activityData.calculateMilesWalked(strideLength, date);
   const minutesDate = activityData.findUserMinutes(date);
-  const minutesWeek = activityData.findUserMinutesWeek();
-  const isStepGoalMet = activityData.determineStepGoalMet();
-  const stepGoalMetDays = activityData.findMetStepGoalDays(stepGoal);
-  const stairRecordDay = activityData.findHighStairRecord();
+  const stairsDate = activityData.findUserStairs(date);
+  const milesWalked = activityData.calculateMilesWalked(strideLength, date);
   const averageStairsAllDate = activityData.findAverageStairsAll(date);
   const averageStepsAllDate = activityData.findAverageStepsAll(date);
   const averageMinutesAllDate = activityData.findAverageMinutesAll(date);
+  const minutesWeek = activityData.findUserMinutesWeek();
   const stepsWeek = activityData.findUserStepsWeek();
   const stairsWeek = activityData.findUserStairsWeek();
 }
