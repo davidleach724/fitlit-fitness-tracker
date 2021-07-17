@@ -96,7 +96,8 @@ const getSleepData = (data) => {
 }
 
 const getActivityData = (data) => {
- // console.log('activity', data.activityData);
+// for miles, create a function in here
+// console.log('activity', data.activityData);
 }
 
 const getRandomUser = (array) => {

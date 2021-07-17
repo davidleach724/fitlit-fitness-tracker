@@ -4,7 +4,7 @@ const expect = chai.expect;
 import Activity from '../src/Activity';
 import activityData from '../src/data/activityData';
 
-describe('Activity', () => {
+describe.only('Activity', () => {
   let activity;
   beforeEach(() => {
     activity = new Activity(activityData, 1);
@@ -14,5 +14,5 @@ describe('Activity', () => {
     expect(Activity).to.be.a('function');
   })
 
-  
+
 })
