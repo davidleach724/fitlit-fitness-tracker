@@ -19,10 +19,6 @@ describe.only('Activity', () => {
   })
 
   it('should return miles walked based on stride length and steps', () => {
-    // user 1 stridelength 4.3
-    // sl * steps = 36244.7
-    //feet in mile = 5280
-    //6.86 miles
     expect(activity.calculateMilesWalked(4.3, '2019/06/19')).to.equal(6.86);
   })
 

@@ -16,6 +16,7 @@ import UserRepository from './UserRepository';
 import User from './User';
 import Hydration from './Hydration';
 import Sleep from './Sleep';
+import Activity from './Activity';
 
 
 
@@ -58,6 +59,7 @@ const getUserData = (data) => {
   const averageStepGoal = userRepository.calculateAverageStepGoal();
   const currentUser = new User(userRepository.getUserData(randomID));
   const strideLength = currentUser.strideLength;
+  const stepGoal = currentUser.stepGoal;
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
 };
 
@@ -97,9 +99,19 @@ const getSleepData = (data) => {
 }
 
 const getActivityData = (data) => {
-// for miles, create a function in here
-
-// console.log('activity', data.activityData);
+  const activityData = new Activity(data, randomID);
+  const stepsDate = activityData.findUserSteps(date);
+  const milesWalked = activityData.calculateMilesWalked(strideLength, date);
+  const minutesDate = activityData.findUserMinutes(date);
+  const minutesWeek = activityData.findUserMinutesWeek();
+  const isStepGoalMet = activityData.determineStepGoalMet();
+  const stepGoalMetDays = activityData.findMetStepGoalDays(stepGoal);
+  const stairRecordDay = activityData.findHighStairRecord();
+  const averageStairsAllDate = activityData.findAverageStairsAll(date);
+  const averageStepsAllDate = activityData.findAverageStepsAll(date);
+  const averageMinutesAllDate = activityData.findAverageMinutesAll(date);
+  const stepsWeek = activityData.findUserStepsWeek();
+  const stairsWeek = activityData.findUserStairsWeek();
 }
 
 const getRandomUser = (array) => {
