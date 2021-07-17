@@ -34,5 +34,8 @@ describe.only('Activity', () => {
     expect(activity.findUserMinutesWeek()).to.be.an('object');
   })
 
-
+  it('should determine if the user has met their step goal', () => {
+    expect(activity.determineStepGoalMet(10000, '2019/06/19')).to.equal(false);
+    expect(activity.determineStepGoalMet(5000, '2019/06/19')).to.equal(true);
+  })
 })
