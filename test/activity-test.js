@@ -26,10 +26,13 @@ describe.only('Activity', () => {
     expect(activity.calculateMilesWalked(4.3, '2019/06/19')).to.equal(6.86);
   })
 
-  
+  it('should return minutes active for a date', () => {
+    expect(activity.findUserMinutes('2019/06/19')).to.equal(275);
+  })
 
-
-
+  it('should return active minutes in a week', () => {
+    expect(activity.findUserMinutesWeek()).to.be.an('object');
+  })
 
 
 })

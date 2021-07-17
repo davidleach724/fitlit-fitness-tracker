@@ -22,8 +22,19 @@ class Activity {
   }
 
   // return active minutes for date
+  findUserMinutes(date) {
+    return this.currentUser.find(elem => (elem.date === date)).minutesActive;
+  }
 
   // return average active minutes for week
+  findUserMinutesWeek() {
+    let minutesWeek = this.currentUser.slice(-7).map((info) => info.minutesActive)
+    let dateWeek = this.currentUser.slice(-7).map(info => info.date)
+    return {
+      'minutes': minutesWeek,
+      'dates': dateWeek
+    }
+  }
 
   // return if step goal was met for date
 
