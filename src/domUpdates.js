@@ -1,3 +1,4 @@
+import Chart from 'chart.js/auto';
 let domUpdates = {
   displayUserInfo(userInfo, currentUser) {
     userInfo.innerHTML = '';
@@ -24,21 +25,66 @@ let domUpdates = {
     </div>
     `)
   },
-  displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek) {
-    hydrationAvgWeek.innerHTML = '';
-    hydrationAvgWeek.insertAdjacentHTML('afterbegin',
-    `
-    <div class='hydration-per-week' id='hydrationPerWeek'>
-    <h3>Water This Week</h3>
-    <p>Monday: ${hydrationWeek[0]} oz</p>
-    <p>Tuesday: ${hydrationWeek[1]} oz</p>
-    <p>Wednesday: ${hydrationWeek[2]} oz</p>
-    <p>Thursday: ${hydrationWeek[3]} oz</p>
-    <p>Friday: ${hydrationWeek[4]} oz</p>
-    <p>Saturday: ${hydrationWeek[5]} oz</p>
-    <p>Sunday: ${hydrationWeek[6]} oz</p>
-    </div>
-    `)
+  // displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek) {
+  //   hydrationAvgWeek.innerHTML = '';
+  //   hydrationAvgWeek.insertAdjacentHTML('afterbegin',
+  //   `
+  //   <div class='hydration-per-week' id='hydrationPerWeek'>
+  //   <h3>Water This Week</h3>
+  //   <p>Monday: ${hydrationWeek[0]} oz</p>
+  //   <p>Tuesday: ${hydrationWeek[1]} oz</p>
+  //   <p>Wednesday: ${hydrationWeek[2]} oz</p>
+  //   <p>Thursday: ${hydrationWeek[3]} oz</p>
+  //   <p>Friday: ${hydrationWeek[4]} oz</p>
+  //   <p>Saturday: ${hydrationWeek[5]} oz</p>
+  //   <p>Sunday: ${hydrationWeek[6]} oz</p>
+  //   </div>
+  //   `)
+  // },
+  displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek, hydartationPerWeekChart) {
+    // hydrationAvgWeek.innerHTML = '';
+    let hydrationWeekChart = new Chart(hydartationPerWeekChart, {
+      type: 'pie',// bar, horizontalBar, pie, line, doughnut, radar, ploarArea
+      data: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        datasets: [{
+          label: 'Hydration Per Week',
+          data: [
+            hydrationWeek[0],
+            hydrationWeek[1],
+            hydrationWeek[2],
+            hydrationWeek[3],
+            hydrationWeek[4],
+            hydrationWeek[5],
+            hydrationWeek[6]
+          ],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(35, 79, 130, 0.6)',
+            'rgba(255, 89, 129, 0.6)',
+            'rgba(75, 99, 132, 0.6)',
+            'rgba(155, 91, 122, 0.6)',
+            'rgba(255, 99, 112, 0.6)',
+            'rgba(201, 90, 102, 0.6)'
+          ],
+          borderWidth: 1,
+          borderColor: '#777',
+          hoverBorderWidth: 5,
+          hoverBorderColor: '#222'
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Hydration Average Per Week Information:',
+          fontSize: 25
+        },
+        legend: {
+          display: true,
+          position: 'right'
+        }
+      }
+    })
   },
   displaySleptHoursPerDay(sleepHoursLastDay, sleepHoursDate) {
     sleepHoursLastDay.innerHTML = '';
@@ -116,4 +162,5 @@ let domUpdates = {
 };
 
 
+// import Chart from 'chart.js/auto';
 export default domUpdates;

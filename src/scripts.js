@@ -1,6 +1,7 @@
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
 
+
 // An example of how you tell webpack to use a CSS file
 import './css/styles.css';
 
@@ -10,19 +11,24 @@ import './images/turing-logo.png';
 //console.log('This is the JavaScript entry file - your code begins here.');
 
 // An example of how you tell webpack to use a JS file
-
 import domUpdates from './domUpdates';
 import UserRepository from './UserRepository';
 import User from './User';
 import Hydration from './Hydration';
 import Sleep from './Sleep';
+// var Chart = require('chart.js');
+// import Chart from 'chart.js/auto';
+// var myChart = new Chart(ctx, {...});
 
 
 
 // DOM ELEMENTS
 let userInfo = document.getElementById('userInfo');
+
 let hydrationAvgDay = document.getElementById('hydrationAvgDay');
 let hydrationAvgWeek = document.getElementById('hydrationAvgWeek');
+let hydartationPerWeekChart = document.getElementById('hydartationPerWeekChart').getContext('2d');
+
 let sleepHoursLastDay = document.getElementById('sleepHoursLastDay');
 let sleepQualityLastDay = document.getElementById('sleepQualityLastDay');
 let sleepHoursLastWeek = document.getElementById('sleepHoursLastWeek');
@@ -66,7 +72,29 @@ const getHydrationData = (data) => {
   const hydrationToday = hydrationData.findCurrentHydration(date);
   const hydrationWeek = hydrationData.findOuncesPerWeek();
   domUpdates.displayHydrationPerDay(hydrationAvgDay, hydrationToday);
-  domUpdates.displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek);
+  domUpdates.displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek, hydartationPerWeekChart);
+  // TEST chart.js
+  // hydrationAvgWeek = ' ';
+  // let hydrationWeekChart = new Chart(myChart, {
+    //   type: 'bar',// bar, horizontalBar, pie, line, doughnut, radar, ploarArea
+    //   data: {
+      //     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      //     datasets: [{
+        //       label: 'Hydration Per Week',
+        //       data: [
+          //         hydrationWeek[0],
+          //         hydrationWeek[1],
+          //         hydrationWeek[2],
+          //         hydrationWeek[3],
+          //         hydrationWeek[4],
+          //         hydrationWeek[5],
+          //         hydrationWeek[6]
+          //       ]
+          //     }]
+          //   },
+          //   options: {}
+          // })
+  ////////////////
   // console.log('hydration data: ', hydrationData);
   // console.log('hydration avg: ', hydrationAverage);
   // console.log('hydration today: ', hydrationToday);
