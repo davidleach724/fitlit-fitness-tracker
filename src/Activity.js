@@ -10,8 +10,16 @@ class Activity {
   }
 
   // return steps for date
+  findUserSteps(date) {
+    return this.currentUser.find((elem) => {
+      return elem.date === date;
+    }).numSteps
+  }
 
   // return miles based on steps and stridelength
+  calculateMilesWalked(strideLength, date) {
+    return parseFloat(((this.findUserSteps(date) * strideLength)/5280).toFixed(2));
+  }
 
   // return active minutes for date
 

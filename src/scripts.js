@@ -57,6 +57,7 @@ const getUserData = (data) => {
   randomID = getRandomUser(data.userData);
   const averageStepGoal = userRepository.calculateAverageStepGoal();
   const currentUser = new User(userRepository.getUserData(randomID));
+  const strideLength = currentUser.strideLength;
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
 };
 
@@ -97,6 +98,7 @@ const getSleepData = (data) => {
 
 const getActivityData = (data) => {
 // for miles, create a function in here
+
 // console.log('activity', data.activityData);
 }
 
