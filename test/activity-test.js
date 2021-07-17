@@ -43,5 +43,20 @@ describe.only('Activity', () => {
     expect(activity.findMetStepGoalDays(10000)).to.be.an('array');
   })
 
-  
+  it('should find all-time stairs climbed record', () => {
+    expect(activity.findHighStairRecord()).to.equal('2019/06/16')
+  })
+
+  it('should return the average stairs of all users for a date', () => {
+    expect(activity.findAverageStairsAll('2019/06/19')).to.equal(14.2);
+  })
+
+  it('should return the average steps of all users for a date', () => { 
+    expect(activity.findAverageStepsAll('2019/06/19')).to.equal(10322);
+  })
+
+  it('should return the average active minutes of all users for a date', () => {
+    expect(activity.findAverageMinutesAll('2019/06/19')).to.equal(220);
+  })
+
 })

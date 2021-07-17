@@ -50,12 +50,39 @@ class Activity {
   }
 
   // find all-time stair record
-  
+  findHighStairRecord() {
+    const sorted = this.currentUser.sort((a, b) => b.flightsOfStairs - a.flightsOfStairs)
+    return sorted[0].date;
+  }
 
   // return ALL USERS
     // average stairs for date
+  findAverageStairsAll(date) {
+    const activityDate = this.activityInfo.filter(user => user.date === date);
+    const totalStairsDate = activityDate.reduce((acc, elem) => {
+      acc += elem.flightsOfStairs
+      return acc
+    }, 0)
+    return parseFloat((totalStairsDate/activityDate.length).toFixed(1))
+  }
     // average steps for date
+  findAverageStepsAll(date) {
+    const activityDate = this.activityInfo.filter(user => user.date === date);
+    const totalStepsDate = activityDate.reduce((acc, elem) => {
+      acc += elem.numSteps
+      return acc
+    }, 0)
+    return Math.floor(totalStepsDate/activityDate.length)
+  }
     // average minutes for date
+  findAverageMinutesAll(date) {
+    const activityDate = this.activityInfo.filter(user => user.date === date);
+    const totalMinutesDate = activityDate.reduce((acc, elem) => {
+      acc += elem.minutesActive
+      return acc
+    }, 0)
+    return Math.floor(totalMinutesDate/activityDate.length)
+  }
 
   // return steps user vs. all users
 
