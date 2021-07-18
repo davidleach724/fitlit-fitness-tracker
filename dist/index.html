@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Activity Tracker</title>
   </head>
   <body>
@@ -15,25 +17,54 @@
 
     <div class = 'user-data' id='userData'>
       <section class='hydration-avg-day' id='hydrationAvgDay'>
+        <canvas id="hydratationPerDayChart"></canvas>
       </section>
       <section class='hydration-avg-week' id='hydrationAvgWeek'>
+        <canvas id="hydratationPerWeekChart"></canvas>
       </section>
       <section class='sleep-hours-last-day' id='sleepHoursLastDay'>
+          <canvas id="sleepHoursLastDayChart"></canvas>
       </section>
       <section class='sleep-quality-last-day' id='sleepQualityLastDay'>
+        <canvas id="sleepQualityLastDayChart"></canvas>
       </section>
       <section class='sleep-hours-last-week' id='sleepHoursLastWeek'>
+        <canvas id="sleepHoursLastWeekChart"></canvas>
       </section>
       <section class='sleep-quality-last-week' id='sleepQualityLastWeek'>
+        <canvas id="sleepQualityLastWeekChart"></canvas>
       </section>
       <section class='sleep-hours-all-time' id='sleepHoursAllTime'>
+        <canvas id="sleepHoursAllTimeChart"></canvas>
       </section>
       <section class='sleep-quality-all-time' id='sleepQualityAllTime'>
+        <canvas id="sleepQualityAllTimeChart"></canvas>
       </section>
+    </section>
+    <section class='num-steps-last-day' id='numStepsLastDay'>
+      <canvas id="numStepsLastDayChart"></canvas>
+    </section>
+    <section class='num-active-last-day' id='numActiveLastDay'>
+      <canvas id="numActiveLastDayChart"></canvas>
+    </section>
+    <section class='distance-walked-last-day' id='distanceWalkedLastDay'>
+      <canvas id="distanceWalkedLastDayChart"></canvas>
+    </section>
+    <section class='num-steps-week' id='numStepsWeek'>
+      <canvas id="numStepsWeekChart"></canvas>
+    </section>
+    <section class='num-active-week' id='numActiveWeek'>
+      <canvas id="numActiveWeekChart"></canvas>
+    </section>
+    <section class='num-stairs-climbed-week' id='numStarisClimbedWeek'>
+      <canvas id="numStarisClimbedWeekChart"></canvas>
+    </section>
     </div>
 
 
 <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
     <script src="bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   </body>
 </html>
