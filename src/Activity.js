@@ -1,6 +1,6 @@
 class Activity {
   constructor(activityInfo, currentID) {
-    this.activityInfo = activityInfo;
+    this.activityInfo = activityInfo.activityData;
     this.currentUserID = currentID;
     this.currentUser = this.findUserActivity();
   }
@@ -33,7 +33,7 @@ class Activity {
   findUserMinutes(date) {
     return this.currentUser.find((elem) => elem.date === date).minutesActive;
   }
-  
+
   // return stairs for date
   findUserStairs(date) {
     return this.currentUser.find((elem) => elem.date === date).flightsOfStairs;

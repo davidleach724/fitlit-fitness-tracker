@@ -40,7 +40,7 @@ let sleepQualityAllTime = document.getElementById('sleepQualityAllTime');
 
 // GLOBAL VARIABLES
 let date = '2020/01/22'
-let randomID;
+let randomID, strideLength, stepGoal;
 
 const callAllData = (file) => {
   fetch(`http://localhost:3001/api/v1/${file}`)
@@ -58,8 +58,8 @@ const getUserData = (data) => {
   randomID = getRandomUser(data.userData);
   const averageStepGoal = userRepository.calculateAverageStepGoal();
   const currentUser = new User(userRepository.getUserData(randomID));
-  const strideLength = currentUser.strideLength;
-  const stepGoal = currentUser.stepGoal;
+  strideLength = currentUser.strideLength;
+  stepGoal = currentUser.stepGoal;
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
 };
 
