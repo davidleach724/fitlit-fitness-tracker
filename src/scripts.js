@@ -42,6 +42,12 @@ let sleepQualityLastWeekChart = document.getElementById('sleepQualityLastWeekCha
 let sleepHoursAllTimeChart = document.getElementById('sleepHoursAllTimeChart').getContext('2d');
 let sleepQualityAllTimeChart = document.getElementById('sleepQualityAllTimeChart').getContext('2d');
 
+let numStepsLastDay = document.getElementById('numStepsLastDay');
+let numActiveLastDay = document.getElementById('numActiveLastDay');
+let distanceWalkedLastDay = document.getElementById('distanceWalkedLastDay');
+let numStepsLastDayChart = document.getElementById('numStepsLastDayChart').getContext('2d');
+let numActiveLastDayChart = document.getElementById('numActiveLastDayChart').getContext('2d');
+let distanceWalkedLastDayChart = document.getElementById('distanceWalkedLastDayChart').getContext('2d');
 
 
 
@@ -127,7 +133,7 @@ domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sle
 //  console.log('sleep qual avg: ', sleepQualityAverage);
 }
 
-const getActivityData = (data) => {
+  const getActivityData = (data) => {
   const activityData = new Activity(data, randomID);
   const stepsDate = activityData.findUserSteps(date);
   const minutesDate = activityData.findUserMinutes(date);
@@ -140,6 +146,14 @@ const getActivityData = (data) => {
   const stepsWeek = activityData.findUserStepsWeek();
   const stairsWeek = activityData.findUserStairsWeek();
   const goalMet = activityData.determineStepGoalMet(stepGoal, date);
+
+
+
+  domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'doughnut', 'Number steps from last date');
+  domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'doughnut', 'Number active from last date');
+  domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, goalMet, milesWalked, 'doughnut', 'DIstance in miles from last date');
+
+
   console.log('steps:', stepsDate);
   console.log('minutes: ', minutesDate);
   console.log('stairs: ', stairsDate)

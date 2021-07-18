@@ -85,3 +85,27 @@ body {
   /* height: 150px;
   width: 150px; */
 }
+
+.num-steps-last-day {
+  border: solid Black 2px;
+  margin: 5px;
+  /* background: white; */
+  /* height: 150px;
+  width: 400px; */
+}
+
+.num-active-last-day {
+  border: solid Black 2px;
+  margin: 5px;
+  /* background: white; */
+  /* height: 150px;
+  width: 150px; */
+}
+
+.distance-walked-last-day {
+  border: solid Black 2px;
+  margin: 5px;
+  /* background: white; */
+  /* height: 150px;
+  width: 150px; */
+}
