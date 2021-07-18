@@ -59,7 +59,7 @@ const getUserData = (data) => {
   const averageStepGoal = userRepository.calculateAverageStepGoal();
   const currentUser = new User(userRepository.getUserData(randomID));
   strideLength = currentUser.strideLength;
-  stepGoal = currentUser.stepGoal;
+  stepGoal = currentUser.dailyStepGoal;
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
 };
 
@@ -110,6 +110,7 @@ const getActivityData = (data) => {
   const minutesWeek = activityData.findUserMinutesWeek();
   const stepsWeek = activityData.findUserStepsWeek();
   const stairsWeek = activityData.findUserStairsWeek();
+  const goalMet = activityData.determineStepGoalMet(stepGoal, date);
   console.log('steps:', stepsDate);
   console.log('minutes: ', minutesDate);
   console.log('stairs: ', stairsDate)
@@ -120,6 +121,9 @@ const getActivityData = (data) => {
   console.log('minutes week: ', minutesWeek);
   console.log('steps week: ', stepsWeek);
   console.log('stairs week: ', stairsWeek);
+  console.log('stride length: ', strideLength);
+  console.log('Step goal: ', stepGoal);
+  console.log('Step goal met: ', goalMet);
 }
 
 const getRandomUser = (array) => {
