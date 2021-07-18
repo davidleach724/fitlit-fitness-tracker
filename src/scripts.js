@@ -45,9 +45,15 @@ let sleepQualityAllTimeChart = document.getElementById('sleepQualityAllTimeChart
 let numStepsLastDay = document.getElementById('numStepsLastDay');
 let numActiveLastDay = document.getElementById('numActiveLastDay');
 let distanceWalkedLastDay = document.getElementById('distanceWalkedLastDay');
+let numStepsWeek = document.getElementById('numStepsWeek');
+let numActiveWeek = document.getElementById('numActiveWeek');
+let numStarisClimbedWeek = document.getElementById('numStarisClimbedWeek');
 let numStepsLastDayChart = document.getElementById('numStepsLastDayChart').getContext('2d');
 let numActiveLastDayChart = document.getElementById('numActiveLastDayChart').getContext('2d');
 let distanceWalkedLastDayChart = document.getElementById('distanceWalkedLastDayChart').getContext('2d');
+let numStepsWeekChart = document.getElementById('numStepsWeekChart').getContext('2d');
+let numActiveWeekChart = document.getElementById('numActiveWeekChart').getContext('2d');
+let numStarisClimbedWeekChart = document.getElementById('numStarisClimbedWeekChart').getContext('2d');
 
 
 
@@ -117,12 +123,12 @@ const sleepQualityAverage = sleepData.findSleepQualityAverage();
 
 
 // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
-domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'pie', 'Slept Hours Today');
+domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'bar', 'Slept Hours Today');
 domUpdates.displayChartPerDay(sleepQualityLastDayChart, sleepQualityLastDay, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Slept Quality Today');
 domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  sleepHoursWeek, 'bar', 'Slept Hours Per Week');
 domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, sleepQualityWeek, 'line', 'Slept Quality Per Week');
 domUpdates.displayChartPerDay(sleepHoursAllTimeChart, sleepHoursAllTime,  sleepHourAverage, sleepHoursDate, 'pie', 'Total Slept Hours');
-domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Total Slept Quality');
+domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sleepQualityAverage, sleepQualityDate, 'bar', 'Total Slept Quality');
 
 
 //  console.log('sleep class: ', sleepData);
@@ -148,25 +154,28 @@ domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sle
   const goalMet = activityData.determineStepGoalMet(stepGoal, date);
 
 
-
-  domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'doughnut', 'Number steps from last date');
+  // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
+  domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'polarArea', 'Number steps from last date');
   domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'doughnut', 'Number active from last date');
-  domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, goalMet, milesWalked, 'doughnut', 'DIstance in miles from last date');
+  domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, goalMet, milesWalked, 'line', 'Distance in miles from last date');
+  domUpdates.displayChartPerWeek(numStepsWeekChart, numStepsWeek,  stepsWeek.steps , 'bar', 'Steps Per Week');
+  domUpdates.displayChartPerWeek(numActiveWeekChart, numActiveWeek, minutesWeek.minutes, 'line', 'Minutes Active Per Week');
+  domUpdates.displayChartPerWeek(numStarisClimbedWeekChart, numStarisClimbedWeek, stairsWeek.stairs, 'bar', 'Climbed stairs during the week');
 
 
-  console.log('steps:', stepsDate);
-  console.log('minutes: ', minutesDate);
-  console.log('stairs: ', stairsDate)
-  console.log('miles walked: ', milesWalked);
-  console.log('average stairs all: ', averageStairsAllDate);
-  console.log('average steps all: ', averageStepsAllDate);
-  console.log('average minutes all: ', averageMinutesAllDate);
-  console.log('minutes week: ', minutesWeek);
-  console.log('steps week: ', stepsWeek);
-  console.log('stairs week: ', stairsWeek);
-  console.log('stride length: ', strideLength);
-  console.log('Step goal: ', stepGoal);
-  console.log('Step goal met: ', goalMet);
+  // console.log('steps:', stepsDate);
+  // console.log('minutes: ', minutesDate);
+  // console.log('stairs: ', stairsDate)
+  // console.log('miles walked: ', milesWalked);
+  // console.log('average stairs all: ', averageStairsAllDate);
+  // console.log('average steps all: ', averageStepsAllDate);
+  // console.log('average minutes all: ', averageMinutesAllDate);
+  // console.log('minutes week: ', minutesWeek);
+  // console.log('steps week: ', stepsWeek);
+  // console.log('stairs week: ', stairsWeek);
+  // console.log('stride length: ', strideLength);
+  // console.log('Step goal: ', stepGoal);
+  // console.log('Step goal met: ', goalMet);
 }
 
 const getRandomUser = (array) => {

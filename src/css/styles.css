@@ -109,3 +109,27 @@ body {
   /* height: 150px;
   width: 150px; */
 }
+
+.num-steps-week {
+  border: solid Black 2px;
+  margin: 5px;
+  /* background: white; */
+  /* height: 150px;
+  width: 400px; */
+}
+
+.num-active-week {
+  border: solid Black 2px;
+  margin: 5px;
+  /* background: white; */
+  /* height: 150px;
+  width: 150px; */
+}
+
+.num-stairs-climbed-week {
+  border: solid Black 2px;
+  margin: 5px;
+  /* background: white; */
+  /* height: 150px;
+  width: 150px; */
+}
