@@ -16,6 +16,7 @@ import UserRepository from './UserRepository';
 import User from './User';
 import Hydration from './Hydration';
 import Sleep from './Sleep';
+import Activity from './Activity';
 
 
 
@@ -39,7 +40,7 @@ let sleepQualityAllTime = document.getElementById('sleepQualityAllTime');
 
 // GLOBAL VARIABLES
 let date = '2020/01/22'
-let randomID;
+let randomID, strideLength, stepGoal;
 
 const callAllData = (file) => {
   fetch(`http://localhost:3001/api/v1/${file}`)
@@ -57,6 +58,8 @@ const getUserData = (data) => {
   randomID = getRandomUser(data.userData);
   const averageStepGoal = userRepository.calculateAverageStepGoal();
   const currentUser = new User(userRepository.getUserData(randomID));
+  strideLength = currentUser.strideLength;
+  stepGoal = currentUser.dailyStepGoal;
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
 };
 
@@ -96,7 +99,31 @@ const getSleepData = (data) => {
 }
 
 const getActivityData = (data) => {
- // console.log('activity', data.activityData);
+  const activityData = new Activity(data, randomID);
+  const stepsDate = activityData.findUserSteps(date);
+  const minutesDate = activityData.findUserMinutes(date);
+  const stairsDate = activityData.findUserStairs(date);
+  const milesWalked = activityData.calculateMilesWalked(strideLength, date);
+  const averageStairsAllDate = activityData.findAverageStairsAll(date);
+  const averageStepsAllDate = activityData.findAverageStepsAll(date);
+  const averageMinutesAllDate = activityData.findAverageMinutesAll(date);
+  const minutesWeek = activityData.findUserMinutesWeek();
+  const stepsWeek = activityData.findUserStepsWeek();
+  const stairsWeek = activityData.findUserStairsWeek();
+  const goalMet = activityData.determineStepGoalMet(stepGoal, date);
+  console.log('steps:', stepsDate);
+  console.log('minutes: ', minutesDate);
+  console.log('stairs: ', stairsDate)
+  console.log('miles walked: ', milesWalked);
+  console.log('average stairs all: ', averageStairsAllDate);
+  console.log('average steps all: ', averageStepsAllDate);
+  console.log('average minutes all: ', averageMinutesAllDate);
+  console.log('minutes week: ', minutesWeek);
+  console.log('steps week: ', stepsWeek);
+  console.log('stairs week: ', stairsWeek);
+  console.log('stride length: ', strideLength);
+  console.log('Step goal: ', stepGoal);
+  console.log('Step goal met: ', goalMet);
 }
 
 const getRandomUser = (array) => {
