@@ -17,7 +17,7 @@ import User from './User';
 import Hydration from './Hydration';
 import Sleep from './Sleep';
 // var Chart = require('chart.js');
-// import Chart from 'chart.js/auto';
+import Chart from 'chart.js/auto';
 // var myChart = new Chart(ctx, {...});
 
 
@@ -27,7 +27,8 @@ let userInfo = document.getElementById('userInfo');
 
 let hydrationAvgDay = document.getElementById('hydrationAvgDay');
 let hydrationAvgWeek = document.getElementById('hydrationAvgWeek');
-let hydartationPerWeekChart = document.getElementById('hydartationPerWeekChart').getContext('2d');
+let hydratationPerDayChart = document.getElementById('hydratationPerDayChart').getContext('2d');
+let hydratationPerWeekChart = document.getElementById('hydratationPerWeekChart').getContext('2d');
 
 let sleepHoursLastDay = document.getElementById('sleepHoursLastDay');
 let sleepQualityLastDay = document.getElementById('sleepQualityLastDay');
@@ -35,6 +36,12 @@ let sleepHoursLastWeek = document.getElementById('sleepHoursLastWeek');
 let sleepQualityLastWeek = document.getElementById('sleepQualityLastWeek');
 let sleepHoursAllTime = document.getElementById('sleepHoursAllTime');
 let sleepQualityAllTime = document.getElementById('sleepQualityAllTime');
+let sleepHoursLastDayChart = document.getElementById('sleepHoursLastDayChart').getContext('2d');
+let sleepQualityLastDayChart = document.getElementById('sleepQualityLastDayChart').getContext('2d');
+let sleepHoursLastWeekChart = document.getElementById('sleepHoursLastWeekChart').getContext('2d');
+let sleepQualityLastWeekChart = document.getElementById('sleepQualityLastWeekChart').getContext('2d');
+let sleepHoursAllTimeChart = document.getElementById('sleepHoursAllTimeChart').getContext('2d');
+let sleepQualityAllTimeChart = document.getElementById('sleepQualityAllTimeChart').getContext('2d');
 
 
 
@@ -71,30 +78,14 @@ const getHydrationData = (data) => {
   const hydrationAverage = hydrationData.findHydrationAverage();
   const hydrationToday = hydrationData.findCurrentHydration(date);
   const hydrationWeek = hydrationData.findOuncesPerWeek();
-  domUpdates.displayHydrationPerDay(hydrationAvgDay, hydrationToday);
-  domUpdates.displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek, hydartationPerWeekChart);
-  // TEST chart.js
-  // hydrationAvgWeek = ' ';
-  // let hydrationWeekChart = new Chart(myChart, {
-    //   type: 'bar',// bar, horizontalBar, pie, line, doughnut, radar, ploarArea
-    //   data: {
-      //     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      //     datasets: [{
-        //       label: 'Hydration Per Week',
-        //       data: [
-          //         hydrationWeek[0],
-          //         hydrationWeek[1],
-          //         hydrationWeek[2],
-          //         hydrationWeek[3],
-          //         hydrationWeek[4],
-          //         hydrationWeek[5],
-          //         hydrationWeek[6]
-          //       ]
-          //     }]
-          //   },
-          //   options: {}
-          // })
-  ////////////////
+  // domUpdates.displayHydrationPerDay(hydrationAvgDay, hydrationToday);
+  // domUpdates.displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek)
+
+  // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
+  domUpdates.displayChartPerDay(hydratationPerDayChart, hydrationAvgDay,  hydrationAverage, hydrationToday, 'line', 'Hydration Today');
+  domUpdates.displayChartPerWeek(hydratationPerWeekChart, hydrationAvgWeek, hydrationWeek, 'bar', 'Hydration Per Week');
+
+
   // console.log('hydration data: ', hydrationData);
   // console.log('hydration avg: ', hydrationAverage);
   // console.log('hydration today: ', hydrationToday);
@@ -102,19 +93,30 @@ const getHydrationData = (data) => {
 }
 
 const getSleepData = (data) => {
- const sleepData = new Sleep(data, randomID);
- const sleepHoursDate = sleepData.findCurrentSleepHours(date);
- const sleepQualityDate = sleepData.findCurrentSleepQuality(date);
- const sleepHoursWeek = sleepData.findSleepWeek();
- const sleepQualityWeek = sleepData.findSleepQualityWeek()
- const sleepHourAverage = sleepData.findSleepHourAverage();
- const sleepQualityAverage = sleepData.findSleepQualityAverage();
- domUpdates.displaySleptHoursPerDay(sleepHoursLastDay, sleepHoursDate);
- domUpdates.displaySleptQualityPerDay(sleepQualityLastDay, sleepQualityDate);
- domUpdates.displaySleptHoursPerWeek(sleepHoursLastWeek, sleepHoursWeek);
- domUpdates.displaySleptQualityPerWeek(sleepQualityLastWeek, sleepQualityWeek);
- domUpdates.displaySleptHoursAll(sleepHoursAllTime, sleepHourAverage);
- domUpdates.displaySleptQualityAll(sleepQualityAllTime, sleepQualityAverage);
+const sleepData = new Sleep(data, randomID);
+const sleepHoursDate = sleepData.findCurrentSleepHours(date);
+const sleepQualityDate = sleepData.findCurrentSleepQuality(date);
+const sleepHoursWeek = sleepData.findSleepWeek();
+const sleepQualityWeek = sleepData.findSleepQualityWeek()
+const sleepHourAverage = sleepData.findSleepHourAverage();
+const sleepQualityAverage = sleepData.findSleepQualityAverage();
+ // domUpdates.displaySleptHoursPerDay(sleepHoursLastDay, sleepHoursDate);
+ // domUpdates.displaySleptQualityPerDay(sleepQualityLastDay, sleepQualityDate);
+ // domUpdates.displaySleptHoursPerWeek(sleepHoursLastWeek, sleepHoursWeek);
+ // domUpdates.displaySleptQualityPerWeek(sleepQualityLastWeek, sleepQualityWeek);
+ // domUpdates.displaySleptHoursAll(sleepHoursAllTime, sleepHourAverage);
+ // domUpdates.displaySleptQualityAll(sleepQualityAllTime, sleepQualityAverage);
+
+// bar, horizontalBar, pie, line, doughnut, radar, ploarArea
+domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'pie', 'Slept Hours Today');
+domUpdates.displayChartPerDay(sleepQualityLastDayChart, sleepQualityLastDay, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Slept Quality Today');
+domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  sleepHoursWeek, 'bar', 'Slept Hours Per Week');
+domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, sleepQualityWeek, 'line', 'Slept Quality Per Week');
+domUpdates.displayChartPerDay(sleepHoursAllTimeChart, sleepHoursAllTime,  sleepHourAverage, sleepHoursDate, 'pie', 'Total Slept Hours');
+domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Total Slept Quality');
+
+
+
 //  console.log('sleep class: ', sleepData);
 //  console.log('sleep hours for date: ', sleepHoursDate);
 //  console.log('sleep quality for date: ', sleepQualityDate)
@@ -135,3 +137,46 @@ callAllData('users');
 callAllData('hydration');
 callAllData('sleep');
 callAllData('activity');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TEST chart.js
+// hydrationAvgWeek = ' ';
+// let hydrationWeekChart = new Chart(myChart, {
+  //   type: 'bar',// bar, horizontalBar, pie, line, doughnut, radar, ploarArea
+  //   data: {
+    //     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    //     datasets: [{
+      //       label: 'Hydration Per Week',
+      //       data: [
+        //         hydrationWeek[0],
+        //         hydrationWeek[1],
+        //         hydrationWeek[2],
+        //         hydrationWeek[3],
+        //         hydrationWeek[4],
+        //         hydrationWeek[5],
+        //         hydrationWeek[6]
+        //       ]
+        //     }]
+        //   },
+        //   options: {}
+        // })
+        ////////////////

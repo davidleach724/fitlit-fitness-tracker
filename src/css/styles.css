@@ -21,66 +21,66 @@ body {
   background: white;
 }
 
-.hydration-per-day {
+.hydration-avg-day {
   border: solid Black 2px;
   margin: 5px;
   background: white;
-  height: 150px;
-  width: 150px;
+  /* height: 150px;
+  width: 150px; */
 }
 
-.hydration-per-week {
+.hydration-avg-week {
   border: solid Black 2px;
   margin: 5px;
   background: white;
-  height: 150px;
-  width: 400px;
+  /* height: 150px;
+  width: 400px; */
 }
 
-.slept-hours-per-day {
+.sleep-hours-last-day {
   border: solid Black 2px;
   margin: 5px;
   background: white;
-  height: 150px;
-  width: 150px;
+  /* height: 150px;
+  width: 150px; */
 }
 
-.slept-quality-per-day {
+.sleep-quality-last-day {
   border: solid Black 2px;
   margin: 5px;
   background: white;
-  height: 150px;
-  width: 150px;
+  /* height: 150px;
+  width: 150px; */
 }
 
-.slept-hours-per-week {
+.sleep-hours-last-week {
   border: solid Black 2px;
   margin: 5px;
   background: white;
-  height: 150px;
-  width: 400px;
+  /* height: 150px;
+  width: 400px; */
 }
 
-.slept-quality-per-week {
+.sleep-quality-last-week {
   border: solid Black 2px;
   margin: 5px;
   background: white;
-  height: 150px;
-  width: 400px;
+  /* height: 150px;
+  width: 400px; */
 }
 
-.slept-hours-all {
+.sleep-hours-all-time {
   border: solid Black 2px;
   margin: 5px;
   background: white;
-  height: 150px;
-  width: 150px;
+  /* height: 150px;
+  width: 150px; */
 }
 
-.slept-quality-all {
+.sleep-quality-all-time {
   border: solid Black 2px;
   margin: 5px;
   background: white;
-  height: 150px;
-  width: 150px;
+  /* height: 150px;
+  width: 150px; */
 }
