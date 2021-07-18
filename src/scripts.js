@@ -110,6 +110,16 @@ const getActivityData = (data) => {
   const minutesWeek = activityData.findUserMinutesWeek();
   const stepsWeek = activityData.findUserStepsWeek();
   const stairsWeek = activityData.findUserStairsWeek();
+  console.log('steps:', stepsDate);
+  console.log('minutes: ', minutesDate);
+  console.log('stairs: ', stairsDate)
+  console.log('miles walked: ', milesWalked);
+  console.log('average stairs all: ', averageStairsAllDate);
+  console.log('average steps all: ', averageStepsAllDate);
+  console.log('average minutes all: ', averageMinutesAllDate);
+  console.log('minutes week: ', minutesWeek);
+  console.log('steps week: ', stepsWeek);
+  console.log('stairs week: ', stairsWeek);
 }
 
 const getRandomUser = (array) => {
