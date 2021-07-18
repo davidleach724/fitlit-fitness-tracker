@@ -81,6 +81,7 @@ const getHydrationData = (data) => {
   // domUpdates.displayHydrationPerDay(hydrationAvgDay, hydrationToday);
   // domUpdates.displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek)
 
+
   // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
   domUpdates.displayChartPerDay(hydratationPerDayChart, hydrationAvgDay,  hydrationAverage, hydrationToday, 'line', 'Hydration Today');
   domUpdates.displayChartPerWeek(hydratationPerWeekChart, hydrationAvgWeek, hydrationWeek, 'bar', 'Hydration Per Week');
@@ -107,6 +108,7 @@ const sleepQualityAverage = sleepData.findSleepQualityAverage();
  // domUpdates.displaySleptHoursAll(sleepHoursAllTime, sleepHourAverage);
  // domUpdates.displaySleptQualityAll(sleepQualityAllTime, sleepQualityAverage);
 
+
 // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
 domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'pie', 'Slept Hours Today');
 domUpdates.displayChartPerDay(sleepQualityLastDayChart, sleepQualityLastDay, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Slept Quality Today');
@@ -114,7 +116,6 @@ domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  slee
 domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, sleepQualityWeek, 'line', 'Slept Quality Per Week');
 domUpdates.displayChartPerDay(sleepHoursAllTimeChart, sleepHoursAllTime,  sleepHourAverage, sleepHoursDate, 'pie', 'Total Slept Hours');
 domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Total Slept Quality');
-
 
 
 //  console.log('sleep class: ', sleepData);
