@@ -111,7 +111,7 @@ const getSleepData = (data) => {
 const sleepData = new Sleep(data, randomID);
 const sleepHoursDate = sleepData.findCurrentSleepHours(date);
 const sleepQualityDate = sleepData.findCurrentSleepQuality(date);
-// const sleepHoursWeek = sleepData.findSleepWeek();
+const sleepHoursWeek = sleepData.findSleepWeek();
 const sleepQualityWeek = sleepData.findSleepQualityWeek()
 const sleepHourAverage = sleepData.findSleepHourAverage();
 const sleepQualityAverage = sleepData.findSleepQualityAverage();
@@ -126,7 +126,7 @@ const sleepQualityAverage = sleepData.findSleepQualityAverage();
 // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
 domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'bar', 'Slept Hours Today');
 domUpdates.displayChartPerDay(sleepQualityLastDayChart, sleepQualityLastDay, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Slept Quality Today');
-// domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  sleepHoursWeek.hours, sleepHoursWeek.dates, 'bar', 'Slept Hours Per Week');
+domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  sleepHoursWeek.hours, sleepHoursWeek.dates, 'bar', 'Slept Hours Per Week');
 domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, sleepQualityWeek.quality, sleepQualityWeek.dates, 'line', 'Slept Quality Per Week');
 domUpdates.displayChartPerDay(sleepHoursAllTimeChart, sleepHoursAllTime,  sleepHourAverage, sleepHoursDate, 'pie', 'Total Slept Hours');
 domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sleepQualityAverage, sleepQualityDate, 'bar', 'Total Slept Quality');
@@ -135,7 +135,8 @@ domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sle
 //  console.log('sleep class: ', sleepData);
 //  console.log('sleep hours for date: ', sleepHoursDate);
  // console.log('sleep quality for date: ', sleepQualityDate)
- console.log('sleep week: ', sleepHoursWeek.hours);
+ // console.log('sleep week: ', sleepHoursWeek.hours);
+ // console.log('sleep quality: ', sleepQualityWeek.quality);
 //  console.log('sleep hour avg: ', sleepHourAverage);
 //  console.log('sleep qual avg: ', sleepQualityAverage);
 }
