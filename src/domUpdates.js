@@ -25,10 +25,10 @@ let domUpdates = {
     <div class='user-activity-date' id='userActivityDate'>
       <h3>Activity For Today, ${date}</h3>
       
-      <p><img src="./images/turing-logo.png" alt="steps icon" height="30px" width="30px">  ${steps} Steps</p>
-      <p><img src="./images/turing-logo.png" alt="building icon" height="30px" width="30px">  ${floors} Floors</p>
-      <p><img src="./images/turing-logo.png" alt="clock icon" height="30px" width="30px">  ${minActive} Min. Active</p>
-      <p><img src="./images/turing-logo.png" alt="active icon" height="30px" width="30px">  ${miles} Miles</p>
+      <p><img src="./images/shoe-prints-solid.png" alt="steps icon" height="30px" width="30px">  ${steps} Steps</p>
+      <p><img src="./images/building-solid.png" alt="building icon" height="30px" width="25px">  ${floors} Floors</p>
+      <p><img src="./images/stopwatch-solid.png" alt="clock icon" height="30px" width="25px">  ${minActive} Min. Active</p>
+      <p><img src="./images/walking-solid.png" alt="active icon" height="30px" width="25px">  ${miles} Miles</p>
       <p>${stepGoal}</p>
     </div>
     `

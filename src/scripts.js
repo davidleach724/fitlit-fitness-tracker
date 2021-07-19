@@ -8,6 +8,10 @@ import './css/styles.css';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png';
 import './images/mosaic.png'
+import './images/shoe-prints-solid.png'
+import './images/walking-solid.png'
+import './images/building-solid.png'
+import './images/stopwatch-solid.png'
 
 //console.log('This is the JavaScript entry file - your code begins here.');
 
