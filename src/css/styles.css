@@ -1,49 +1,58 @@
 body, html {
-  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+  background-image: url('/src/images/mosaic.png');
   background-repeat: repeat;
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
-  /* height: 100%; */
 }
 
-body {
+.header {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  color: rgb(215, 216, 216);
+  margin: 10px;
 }
+
+h2 {
+  margin: auto;
+  font-size: xxx-large;
+}
+
+.user-info {
+  display: flex;
+  color: rgb(215, 216, 216);
+  margin: 5px;
+}
+
 
 .user-data {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 300px;
 }
 
-.user-info-display {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-}
 
 .hydration-avg-day {
-  border: solid Black 2px;
+  border: solid black 2px;
+  border-radius: 10px;
   margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 150px; */
+  height: 200px;
+  background: rgb(210, 210, 210);
 }
 
 .hydration-avg-week {
   border: solid Black 2px;
   margin: 5px;
-  /* background: white; */
-  /* height: 150px;
+  /* background: white;
+  height: 200px;
   width: 400px; */
 }
 
 .sleep-hours-last-day {
   border: solid Black 2px;
   margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 150px; */
+  /* background: white;
+  height: 200px; */
+  /* width: 150px; */
 }
 
 .sleep-quality-last-day {

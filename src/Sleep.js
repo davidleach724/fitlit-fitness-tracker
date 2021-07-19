@@ -22,13 +22,21 @@ class Sleep {
   }
 // For a user, how many hours slept each day over the course of a given week (7 days)
   findSleepWeek() {
-    const sleepWeek = this.currentUser.slice(-7);
-    return sleepWeek.map((info) => info.hoursSlept)
+    let sleepHours = this.currentUser.slice(-7).map((info) => info.hoursSlept)
+    let sleepDates = this.currentUser.slide(-7).map((info) => info.date)
+    return {
+      hours: sleepHours,
+      dates: sleepDates,
+    }
   }
 // For a user, their sleep quality each day over the course of a given week (7 days)
   findSleepQualityWeek() {
-    const sleepWeek = this.currentUser.slice(-7);
-    return sleepWeek.map((info) => info.sleepQuality)
+    let sleepQuality = this.currentUser.slice(-7).map((info) => info.sleepQuality);
+    let sleepDates = this.currentUser.slice(-7).map((info) => info.dates)
+    return {
+      quality: sleepQuality,
+      dates: sleepDates,
+    }
   }
 //For a user, the average number of hours slept per day
   findSleepHourAverage() {

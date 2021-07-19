@@ -11,6 +11,18 @@ class User {
   showFirstName() {
     return this.name.split(' ')[0];
   }
+
+  determineTimeOfDay () {
+    let time = new Date();
+    let hour = time.getHours();
+    if(hour < 10) {
+      return 'Good Morning, '
+    }
+    if(hour < 17) {
+      return 'Good Afternoon, '
+    }
+    return 'Good Evening, '
+  }
 }
 
 export default User;
