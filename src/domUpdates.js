@@ -35,7 +35,7 @@ let domUpdates = {
           borderWidth: 1,
           borderColor: '#777',
           hoverBorderWidth: 5,
-          hoverBorderColor: '#222'
+          hoverBorderColor: '#fff'
         }]
       },
       options: {
@@ -89,7 +89,7 @@ let domUpdates = {
           borderWidth: 1,
           borderColor: '#777',
           hoverBorderWidth: 5,
-          hoverBorderColor: '#222'
+          hoverBorderColor: '#fff'
         }]
       },
       options: {
