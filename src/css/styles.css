@@ -37,6 +37,7 @@ h2 {
 .today-activity {
   display: flex;
   justify-content: center;
+
   color: black;
   background: rgb(168, 238, 246);
   border: solid black 2px;
