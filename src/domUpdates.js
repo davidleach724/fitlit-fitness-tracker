@@ -4,16 +4,18 @@ let domUpdates = {
     userInfo.innerHTML = '';
     userInfo.insertAdjacentHTML('afterbegin',
     `
-    <div class='user-info-display' id='userInfoDisplay'>
+    <div class='user-greeting-display' id='userGreetingDisplay'>
       <h1>${currentUser.determineTimeOfDay()} ${currentUser.showFirstName()}!</h1
     </div>
+    <div class='user-info-display' id='userInfoDisplay'>
+     <p>Full Name: ${currentUser.name}</p>
+     <p>Email: ${currentUser.email}</p>
+     <p>Address: ${currentUser.address}</p>
+     <p>Stride Length: ${currentUser.strideLength} feet</p>
+     <p>Daily Step Goal: ${currentUser.dailyStepGoal} steps</p>
+     <p>Number of Friends: ${currentUser.friends.length}</p>
+    </div>
     `)
-    // <p class="user-name">${currentUser.name}</p>
-    // <p>${currentUser.email}</p>
-    // <p>${currentUser.address}</p>
-    // <p>${currentUser.strideLength}</p>
-    // <p>${currentUser.dailyStepGoal}</p>
-    // <p>${currentUser.friends}</p>
   },
 
   displayChartPerDay(chartSection, htmlSection, totalDataInfo, dataInfo, chartStyle, dataType) {
