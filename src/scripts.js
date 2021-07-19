@@ -92,9 +92,6 @@ const getHydrationData = (data) => {
   const hydrationAverage = hydrationData.findHydrationAverage();
   const hydrationToday = hydrationData.findCurrentHydration(date);
   const hydrationWeek = hydrationData.findOuncesPerWeek();
-  // domUpdates.displayHydrationPerDay(hydrationAvgDay, hydrationToday);
-  // domUpdates.displayHydrationPerWeek(hydrationAvgWeek, hydrationWeek)
-
 
   // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
   domUpdates.displayChartPerDay(hydratationPerDayChart, hydrationAvgDay,  hydrationAverage, hydrationToday, 'line', 'Hydration Today');
@@ -115,13 +112,6 @@ const sleepHoursWeek = sleepData.findSleepWeek();
 const sleepQualityWeek = sleepData.findSleepQualityWeek()
 const sleepHourAverage = sleepData.findSleepHourAverage();
 const sleepQualityAverage = sleepData.findSleepQualityAverage();
- // domUpdates.displaySleptHoursPerDay(sleepHoursLastDay, sleepHoursDate);
- // domUpdates.displaySleptQualityPerDay(sleepQualityLastDay, sleepQualityDate);
- // domUpdates.displaySleptHoursPerWeek(sleepHoursLastWeek, sleepHoursWeek);
- // domUpdates.displaySleptQualityPerWeek(sleepQualityLastWeek, sleepQualityWeek);
- // domUpdates.displaySleptHoursAll(sleepHoursAllTime, sleepHourAverage);
- // domUpdates.displaySleptQualityAll(sleepQualityAllTime, sleepQualityAverage);
-
 
 // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
 domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'bar', 'Slept Hours Today');
@@ -130,7 +120,6 @@ domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  slee
 domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, sleepQualityWeek.quality, sleepQualityWeek.dates, 'line', 'Slept Quality Per Week');
 domUpdates.displayChartPerDay(sleepHoursAllTimeChart, sleepHoursAllTime,  sleepHourAverage, sleepHoursDate, 'pie', 'Total Slept Hours');
 domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sleepQualityAverage, sleepQualityDate, 'bar', 'Total Slept Quality');
-
 
 //  console.log('sleep class: ', sleepData);
 //  console.log('sleep hours for date: ', sleepHoursDate);

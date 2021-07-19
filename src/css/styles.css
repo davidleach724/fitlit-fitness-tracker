@@ -25,9 +25,16 @@ h2 {
 }
 
 
-.user-data {
+/* .user-data {
   display: grid;
   grid-template-columns: 300px;
+} */
+
+.user-data {
+  display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1.5%;
 }
 
 
@@ -35,8 +42,8 @@ h2 {
   border: solid black 2px;
   border-radius: 10px;
   margin: 5px;
-  height: 200px;
-  background: rgb(210, 210, 210);
+  /* height: 200px;
+  background: rgb(210, 210, 210); */
 }
 
 .hydration-avg-week {
