@@ -24,8 +24,12 @@ class Hydration {
   }
 
   findOuncesPerWeek() {
-    const hydrationWeek = this.currentUser.slice(-7);
-    return hydrationWeek.map((info) => info.numOunces);
+    let hydrationWeek = this.currentUser.slice(-7).map((info) => info.numOunces);
+    let hydrationDates = this.currentUser.slice(-7).map((info) => info.date);
+    return {
+      ounces: hydrationWeek,
+      dates: hydrationDates,
+    }
   }
 }
 
