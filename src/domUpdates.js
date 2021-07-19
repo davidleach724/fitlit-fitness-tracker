@@ -5,9 +5,9 @@ let domUpdates = {
     userInfo.insertAdjacentHTML('afterbegin',
     `
     <div class='user-greeting-display' id='userGreetingDisplay'>
-      <h1>${currentUser.determineTimeOfDay()} ${currentUser.showFirstName()}!</h1
+      <h1 id="greeting">${currentUser.determineTimeOfDay()} ${currentUser.showFirstName()}!</h1
     </div>
-    <div class='user-info-display' id='userInfoDisplay'>
+    <div class='user-info-display hidden' id='userInfoDisplay'>
      <p>Full Name: ${currentUser.name}</p>
      <p>Email: ${currentUser.email}</p>
      <p>Address: ${currentUser.address}</p>

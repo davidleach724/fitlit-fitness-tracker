@@ -13,6 +13,10 @@ body, html {
   margin: 10px;
 }
 
+.hidden {
+  display: none!important;
+}
+
 h2 {
   margin: auto;
   font-size: xxx-large;
