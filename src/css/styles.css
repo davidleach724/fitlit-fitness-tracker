@@ -33,26 +33,26 @@ h2 {
 
 
 .hydration-avg-day {
-  border: solid Black 2px;
+  border: solid black 2px;
+  border-radius: 10px;
   margin: 5px;
-  background: white;
   height: 200px;
-  /* width: 150px; */
+  background: rgb(210, 210, 210);
 }
 
 .hydration-avg-week {
   border: solid Black 2px;
   margin: 5px;
-  background: white;
+  /* background: white;
   height: 200px;
-  width: 400px;
+  width: 400px; */
 }
 
 .sleep-hours-last-day {
   border: solid Black 2px;
   margin: 5px;
-  background: white;
-  height: 200px;
+  /* background: white;
+  height: 200px; */
   /* width: 150px; */
 }
 
