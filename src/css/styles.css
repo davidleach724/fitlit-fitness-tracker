@@ -151,6 +151,20 @@ h2 {
 }
 
 
+/* HOVER */
+.user-data *:hover {
+  cursor: pointer;
+  background-color:  #F2F2F3;
+  box-shadow: 7px 5px 3px 1px #26222d;
+  margin: 5%;
+  opacity: 0.9;
+}
+
+
+
+
+
+
 /* MEDIA QUERIES */
 /* 1025px and higher Desktops */
 /* @media (min-width: 1025px) {
