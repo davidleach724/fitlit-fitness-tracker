@@ -42,6 +42,7 @@ h2 {
   border: solid black 2px;
   border-radius: 10px;
   margin: 5px;
+  box-sizing: content-box;
   /* height: 200px;
   background: rgb(210, 210, 210); */
 }
@@ -154,11 +155,24 @@ h2 {
 /* HOVER */
 .user-data *:hover {
   cursor: pointer;
-  background-color:  #F2F2F3;
-  box-shadow: 7px 5px 3px 1px #26222d;
-  margin: 5%;
-  opacity: 0.9;
+  box-shadow: 1px 2px 2px 3px #26222d;
+  margin: 0%;
+  transition: 0.5s ease width;
+  transition: 0.2s ease border;
+  border: solid rgb(18, 128, 93) 5px;
+  width: 92%;
 }
+
+/* .hydration-avg-day, .hydration-avg-week, .sleep-hours-last-day, .sleep-quality-last-day, .sleep-hours-last-week, .sleep-quality-last-week, .sleep-hours-all-time, .sleep-quality-all-time, .num-steps-last-day, .num-active-last-day, .distance-walked-last-day, .num-steps-week, .num-active-week, .num-stairs-climbed-week:hover {
+  cursor: pointer;
+  box-shadow: 1px 2px 2px 3px #26222d;
+  margin: 0%;
+  transition: 0.5s ease width;
+  transition: 0.2s ease border;
+  border: solid rgb(18, 128, 93) 5px;
+  width: 92%;
+} */
+
 
 
 
