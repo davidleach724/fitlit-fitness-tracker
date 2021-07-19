@@ -52,12 +52,20 @@ let domUpdates = {
       })
     },
 
-  displayChartPerWeek(chartSection, htmlSection, dataInfo, chartStyle, dataType) {
+  displayChartPerWeek(chartSection, htmlSection, dataInfo, dateInfo, chartStyle, dataType) {
     let dataInfoChart = new Chart(chartSection, {
       type: chartStyle,
       // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
       data: {
-        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        labels: [
+          dateInfo[0],
+          dateInfo[1],
+          dateInfo[2],
+          dateInfo[3],
+          dateInfo[4],
+          dateInfo[5],
+          dateInfo[6]
+        ],
         datasets: [{
           label: dataType,
           data: [

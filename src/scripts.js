@@ -159,9 +159,9 @@ domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sle
   domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'polarArea', 'Number steps from last date');
   domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'doughnut', 'Number active from last date');
   domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, goalMet, milesWalked, 'line', 'Distance in miles from last date');
-  domUpdates.displayChartPerWeek(numStepsWeekChart, numStepsWeek,  stepsWeek.steps , 'bar', 'Steps Per Week');
-  domUpdates.displayChartPerWeek(numActiveWeekChart, numActiveWeek, minutesWeek.minutes, 'line', 'Minutes Active Per Week');
-  domUpdates.displayChartPerWeek(numStarisClimbedWeekChart, numStarisClimbedWeek, stairsWeek.stairs, 'bar', 'Climbed stairs during the week');
+  domUpdates.displayChartPerWeek(numStepsWeekChart, numStepsWeek,  stepsWeek.steps, stepsWeek.dates, 'bar', 'Steps Per Week');
+  domUpdates.displayChartPerWeek(numActiveWeekChart, numActiveWeek, minutesWeek.minutes, minutesWeek.dates, 'line', 'Minutes Active Per Week');
+  domUpdates.displayChartPerWeek(numStarisClimbedWeekChart, numStarisClimbedWeek, stairsWeek.stairs, stairsWeek.dates, 'bar', 'Climbed stairs during the week');
 
 
   // console.log('steps:', stepsDate);
@@ -171,9 +171,9 @@ domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sle
   // console.log('average stairs all: ', averageStairsAllDate);
   // console.log('average steps all: ', averageStepsAllDate);
   // console.log('average minutes all: ', averageMinutesAllDate);
-  // console.log('minutes week: ', minutesWeek);
-  // console.log('steps week: ', stepsWeek);
-  // console.log('stairs week: ', stairsWeek);
+  console.log('minutes week: ', minutesWeek);
+  console.log('steps week: ', stepsWeek);
+  console.log('stairs week: ', stairsWeek);
   // console.log('stride length: ', strideLength);
   // console.log('Step goal: ', stepGoal);
   // console.log('Step goal met: ', goalMet);
