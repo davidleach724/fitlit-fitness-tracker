@@ -25,6 +25,8 @@ import Chart from 'chart.js/auto';
 // DOM ELEMENTS
 let userInfo = document.getElementById('userInfo');
 
+let todayActivity = document.getElementById('todayActivity');
+
 let hydrationAvgDay = document.getElementById('hydrationAvgDay');
 let hydrationAvgWeek = document.getElementById('hydrationAvgWeek');
 let hydratationPerDayChart = document.getElementById('hydratationPerDayChart').getContext('2d');
@@ -157,6 +159,8 @@ domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sle
 
 
   // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
+  domUpdates.displayTodaysData(todayActivity, date, stepsDate, stairsDate, minutesDate, milesWalked, goalMet);
+
   domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'polarArea', 'Number steps from last date');
   domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'doughnut', 'Number active from last date');
   domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, goalMet, milesWalked, 'line', 'Distance in miles from last date');

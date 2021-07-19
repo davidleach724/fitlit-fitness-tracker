@@ -18,6 +18,23 @@ let domUpdates = {
     `)
   },
 
+  displayTodaysData(todayActivity, date, steps, floors, minActive, miles, stepGoal) {
+    todayActivity.innerHTML = '';
+    todayActivity.insertAdjacentHTML('afterbegin',
+    `
+    <div class='user-activity-date' id='userActivityDate'>
+      <h3>Activity For Today, ${date}</h3>
+      
+      <p><img src="./images/turing-logo.png" alt="turing logo" height="30px" width="30px">  ${steps} Steps</p>
+      <p><img src="./images/turing-logo.png" alt="turing logo" height="30px" width="30px">  ${floors} Floors</p>
+      <p><img src="./images/turing-logo.png" alt="turing logo" height="30px" width="30px">  ${minActive} Min. Active</p>
+      <p><img src="./images/turing-logo.png" alt="turing logo" height="30px" width="30px">  ${miles} Miles</p>
+      <p>${stepGoal}</p>
+    </div>
+    `
+    )
+  },
+
   displayChartPerDay(chartSection, htmlSection, totalDataInfo, dataInfo, chartStyle, dataType) {
     let dataInfoChart = new Chart(chartSection, {
       type: chartStyle,
