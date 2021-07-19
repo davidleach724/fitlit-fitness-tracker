@@ -4,16 +4,35 @@ let domUpdates = {
     userInfo.innerHTML = '';
     userInfo.insertAdjacentHTML('afterbegin',
     `
-    <div class='user-info-display' id='userInfoDisplay'>
-      <h1>${currentUser.determineTimeOfDay()} ${currentUser.showFirstName()}!</h1
+    <div class='user-greeting-display' id='userGreetingDisplay'>
+      <h1 id="greeting">${currentUser.determineTimeOfDay()} ${currentUser.showFirstName()}!</h1
+    </div>
+    <div class='user-info-display hidden' id='userInfoDisplay'>
+     <p>Full Name: ${currentUser.name}</p>
+     <p>Email: ${currentUser.email}</p>
+     <p>Address: ${currentUser.address}</p>
+     <p>Stride Length: ${currentUser.strideLength} feet</p>
+     <p>Daily Step Goal: ${currentUser.dailyStepGoal} steps</p>
+     <p>Number of Friends: ${currentUser.friends.length}</p>
     </div>
     `)
-    // <p class="user-name">${currentUser.name}</p>
-    // <p>${currentUser.email}</p>
-    // <p>${currentUser.address}</p>
-    // <p>${currentUser.strideLength}</p>
-    // <p>${currentUser.dailyStepGoal}</p>
-    // <p>${currentUser.friends}</p>
+  },
+
+  displayTodaysData(todayActivity, date, steps, floors, minActive, miles, stepGoal) {
+    todayActivity.innerHTML = '';
+    todayActivity.insertAdjacentHTML('afterbegin',
+    `
+    <div class='user-activity-date' id='userActivityDate'>
+      <h3>Activity For Today, ${date}</h3>
+      
+      <p><img src="./images/shoe-prints-solid.png" alt="steps icon" height="30px" width="30px">  ${steps} Steps</p>
+      <p><img src="./images/building-solid.png" alt="building icon" height="30px" width="25px">  ${floors} Floors</p>
+      <p><img src="./images/stopwatch-solid.png" alt="clock icon" height="30px" width="25px">  ${minActive} Min. Active</p>
+      <p><img src="./images/walking-solid.png" alt="active icon" height="30px" width="25px">  ${miles} Miles</p>
+      <p>${stepGoal}</p>
+    </div>
+    `
+    )
   },
 
   displayChartPerDay(chartSection, htmlSection, totalDataInfo, dataInfo, chartStyle, dataType) {

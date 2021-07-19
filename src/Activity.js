@@ -53,10 +53,11 @@ class Activity {
 
   // return if step goal was met for date
   determineStepGoalMet(stepGoal, date) {
+    this.findUserSteps(date)
     if (this.findUserSteps(date) >= stepGoal) {
-      return true;
+      return `Nice! You met your step goal for today!`;
     }
-    return false;
+    return `You need ${stepGoal - this.findUserSteps(date)} more steps to complete your goal, keep it up!`;
   }
 
   // return days step goal was met

@@ -8,6 +8,10 @@ import './css/styles.css';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png';
 import './images/mosaic.png'
+import './images/shoe-prints-solid.png'
+import './images/walking-solid.png'
+import './images/building-solid.png'
+import './images/stopwatch-solid.png'
 
 //console.log('This is the JavaScript entry file - your code begins here.');
 
@@ -24,6 +28,9 @@ import Chart from 'chart.js/auto';
 
 // DOM ELEMENTS
 let userInfo = document.getElementById('userInfo');
+let turingLogo = document.getElementById('turingLogo');
+
+let todayActivity = document.getElementById('todayActivity');
 
 let hydrationAvgDay = document.getElementById('hydrationAvgDay');
 let hydrationAvgWeek = document.getElementById('hydrationAvgWeek');
@@ -59,7 +66,7 @@ let numStarisClimbedWeekChart = document.getElementById('numStarisClimbedWeekCha
 
 
 // EVENT LISTENERS
-
+turingLogo.addEventListener('click', showUserInfo);
 
 
 // GLOBAL VARIABLES
@@ -157,6 +164,8 @@ domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sle
 
 
   // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
+  domUpdates.displayTodaysData(todayActivity, date, stepsDate, stairsDate, minutesDate, milesWalked, goalMet);
+
   domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'polarArea', 'Number steps from last date');
   domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'doughnut', 'Number active from last date');
   domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, goalMet, milesWalked, 'line', 'Distance in miles from last date');
@@ -178,6 +187,15 @@ domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sle
   // console.log('stride length: ', strideLength);
   // console.log('Step goal: ', stepGoal);
   // console.log('Step goal met: ', goalMet);
+}
+
+function showUserInfo() {
+  let userInfo = document.getElementById('userInfoDisplay');
+  if(userInfo.classList.contains('hidden')) {
+    userInfo.classList.remove('hidden');
+    return
+  }
+  userInfo.classList.add('hidden');
 }
 
 const getRandomUser = (array) => {
