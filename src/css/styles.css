@@ -30,7 +30,6 @@ h2 {
 }
 
 .user-data {
-  grid-template-columns: 300px;
   grid-template-rows: 300px;
   text-align: center;
 }
@@ -104,6 +103,5 @@ h2 {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1%;
-    margin-left: 10%;
   }
 }
