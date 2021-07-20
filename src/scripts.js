@@ -22,7 +22,6 @@ import User from './User';
 import Hydration from './Hydration';
 import Sleep from './Sleep';
 import Activity from './Activity';
-import Chart from 'chart.js/auto';
 
 
 // DOM ELEMENTS
