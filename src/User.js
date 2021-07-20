@@ -12,6 +12,16 @@ class User {
     return this.name.split(' ')[0];
   }
 
+  determineFriends(userList) {
+    console.log(userList);
+    console.log(this.friends);
+    return this.friends.reduce((arr, friend) => {
+      let num = userList.userID.indexOf(friend);
+      arr.push(userList.userName[num])
+      return arr
+    }, [])
+  }
+
   determineTimeOfDay () {
     let time = new Date();
     let hour = time.getHours();

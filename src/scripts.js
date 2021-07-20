@@ -34,26 +34,26 @@ let turingLogo = document.getElementById('turingLogo');
 
 let todayActivity = document.getElementById('todayActivity');
 
-let hydrationAvgDay = document.getElementById('hydrationAvgDay');
+// let hydrationAvgDay = document.getElementById('hydrationAvgDay');
 let hydrationAvgWeek = document.getElementById('hydrationAvgWeek');
-let hydratationPerDayChart = document.getElementById('hydratationPerDayChart').getContext('2d');
+//let hydratationPerDayChart = document.getElementById('hydratationPerDayChart').getContext('2d');
 let hydratationPerWeekChart = document.getElementById('hydratationPerWeekChart').getContext('2d');
 
 let sleepToday = document.getElementById('todaySleep');
 let sleepHoursLastDay = document.getElementById('sleepHoursLastDay');
 let sleepQualityLastDay = document.getElementById('sleepQualityLastDay');
-let sleepHoursLastWeek = document.getElementById('sleepHoursLastWeek');
-let sleepQualityLastWeek = document.getElementById('sleepQualityLastWeek');
-let sleepHoursAllTime = document.getElementById('sleepHoursAllTime');
-let sleepQualityAllTime = document.getElementById('sleepQualityAllTime');
-let sleepHoursLastDayChart = document.getElementById('sleepHoursLastDayChart').getContext('2d');
-let sleepQualityLastDayChart = document.getElementById('sleepQualityLastDayChart').getContext('2d');
+// let sleepHoursLastWeek = document.getElementById('sleepHoursLastWeek');
+// let sleepQualityLastWeek = document.getElementById('sleepQualityLastWeek');
+// let sleepHoursAllTime = document.getElementById('sleepHoursAllTime');
+// let sleepQualityAllTime = document.getElementById('sleepQualityAllTime');
+// let sleepHoursLastDayChart = document.getElementById('sleepHoursLastDayChart').getContext('2d');
+// let sleepQualityLastDayChart = document.getElementById('sleepQualityLastDayChart').getContext('2d');
 let sleepHoursLastWeekChart = document.getElementById('sleepHoursLastWeekChart').getContext('2d');
 let sleepQualityLastWeekChart = document.getElementById('sleepQualityLastWeekChart').getContext('2d');
-let sleepHoursAllTimeChart = document.getElementById('sleepHoursAllTimeChart').getContext('2d');
-let sleepQualityAllTimeChart = document.getElementById('sleepQualityAllTimeChart').getContext('2d');
+// let sleepHoursAllTimeChart = document.getElementById('sleepHoursAllTimeChart').getContext('2d');
+// let sleepQualityAllTimeChart = document.getElementById('sleepQualityAllTimeChart').getContext('2d');
 
-let numStepsLastDay = document.getElementById('numStepsLastDay');
+// let numStepsLastDay = document.getElementById('numStepsLastDay');
 let numActiveLastDay = document.getElementById('numActiveLastDay');
 let distanceWalkedLastDay = document.getElementById('distanceWalkedLastDay');
 let numStepsWeek = document.getElementById('numStepsWeek');
@@ -94,13 +94,15 @@ const getUserData = (data) => {
   const currentUser = new User(userRepository.getUserData(randomID));
   strideLength = currentUser.strideLength;
   stepGoal = currentUser.dailyStepGoal;
-  domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
+  const friendList = currentUser.determineFriends(userRepository.getUserNames());
+  console.log(friendList);
+  domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal, friendList);
 };
 
 const getHydrationData = (data) => {
   const hydrationData = new Hydration(data, randomID);
-  const hydrationAverage = hydrationData.findHydrationAverage();
-  const hydrationToday = hydrationData.findCurrentHydration(date);
+  // const hydrationAverage = hydrationData.findHydrationAverage();
+  // const hydrationToday = hydrationData.findCurrentHydration(date);
   const hydrationWeek = hydrationData.findOuncesPerWeek();
 
   // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
@@ -127,8 +129,8 @@ const sleepQualityAverage = sleepData.findSleepQualityAverage();
 
 // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
 domUpdates.displaySleepData(sleepToday, date, sleepHoursDate, sleepQualityDate, sleepHourAverage, sleepQualityAverage);
-domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'bar', 'Slept Hours Today');
-domUpdates.displayChartPerDay(sleepQualityLastDayChart, sleepQualityLastDay, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Slept Quality Today');
+// domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'bar', 'Slept Hours Today');
+// domUpdates.displayChartPerDay(sleepQualityLastDayChart, sleepQualityLastDay, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Slept Quality Today');
 
 domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  sleepHoursWeek.hours, sleepHoursWeek.dates, 'bar', 'Slept Hours Per Week');
 domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, sleepQualityWeek.quality, sleepQualityWeek.dates, 'line', 'Slept Quality Per Week');
