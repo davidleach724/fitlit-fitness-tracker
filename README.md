@@ -5,12 +5,13 @@
   - [Andrey Bermudez](https://github.com/Andrey-1992)
 
 ## Context
-FitLit is all about your Journey to Health. By using FitLit, you get up to the minute info about various aspects of your daily health, including water intake, steps taken, sleep information, and more! You can also compare your activity to your friends to compete for Healthy Bragging Rights!
+FitLit is all about your Journey to Health. By using FitLit, you get up to the minute info about various aspects of your daily health, including: water intake, steps taken, sleep information, during the day or a pass of a week !
+The user is able to view personal user information by clicking the user icon on the top right of the page.
+This websites offers multiple views depending on the user device; These views include Mobile Devices, iPad and Desktop.
 
 
 #### Technologies used:
   * JavaScript
-  * Terminal
   * GitHub
   * HTML
   * CSS
@@ -18,7 +19,7 @@ FitLit is all about your Journey to Health. By using FitLit, you get up to the m
 
 ## Challenges
   * Implement fetch calls to work with an API.
-  * Implement the SRP in classes and functions.
+  * Implementation of SRP in classes and functions.
   * Create a clear and responsive application board.
 
 ## Wins
