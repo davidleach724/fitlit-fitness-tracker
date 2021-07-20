@@ -13,7 +13,7 @@ import './images/walking-solid.png'
 import './images/building-solid.png'
 import './images/stopwatch-solid.png'
 import './images/bed-solid.png'
-import 
+import './images/heartbeat-solid.png'
 
 //console.log('This is the JavaScript entry file - your code begins here.');
 
