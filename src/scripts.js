@@ -37,6 +37,7 @@ let hydrationAvgWeek = document.getElementById('hydrationAvgWeek');
 let hydratationPerDayChart = document.getElementById('hydratationPerDayChart').getContext('2d');
 let hydratationPerWeekChart = document.getElementById('hydratationPerWeekChart').getContext('2d');
 
+let sleepToday = document.getElementById('todaySleep');
 let sleepHoursLastDay = document.getElementById('sleepHoursLastDay');
 let sleepQualityLastDay = document.getElementById('sleepQualityLastDay');
 let sleepHoursLastWeek = document.getElementById('sleepHoursLastWeek');
@@ -121,6 +122,7 @@ const sleepHourAverage = sleepData.findSleepHourAverage();
 const sleepQualityAverage = sleepData.findSleepQualityAverage();
 
 // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
+domUpdates.displaySleepData(sleepToday, date, sleepHoursDate, sleepQualityDate, sleepHourAverage, sleepQualityAverage);
 domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'bar', 'Slept Hours Today');
 domUpdates.displayChartPerDay(sleepQualityLastDayChart, sleepQualityLastDay, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Slept Quality Today');
 domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  sleepHoursWeek.hours, sleepHoursWeek.dates, 'bar', 'Slept Hours Per Week');
