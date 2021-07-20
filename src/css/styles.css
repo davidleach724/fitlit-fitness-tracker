@@ -56,6 +56,10 @@ h2 {
   height:300px;
 }
 
+.sleep-today {
+  display: flex;
+}
+
 
 /* HOVER */
 .user-data *:hover {
