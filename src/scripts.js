@@ -80,7 +80,7 @@ const getHydrationData = (data) => {
   const hydrationData = new Hydration(data, randomID);
   const hydrationWeek = hydrationData.findOuncesPerWeek();
 
-  domUpdates.displayChartPerWeek(hydratationPerWeekChart, hydrationAvgWeek, hydrationWeek.ounces, hydrationWeek.dates, 'bar', 'Hydration Per Week');
+  domUpdates.displayChartPerWeek(hydratationPerWeekChart, hydrationAvgWeek, hydrationWeek.ounces, hydrationWeek.dates, 'bar');
 }
 
 const getSleepData = (data) => {
@@ -93,8 +93,8 @@ const getSleepData = (data) => {
   const sleepQualityAverage = sleepData.findSleepQualityAverage();
 
   domUpdates.displaySleepData(sleepToday, date, sleepHoursDate, sleepQualityDate, sleepHourAverage, sleepQualityAverage);
-  domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  sleepHoursWeek.hours, sleepHoursWeek.dates, 'bar', 'Slept Hours Per Week');
-  domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, sleepQualityWeek.quality, sleepQualityWeek.dates, 'line', 'Slept Quality Per Week');
+  domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  sleepHoursWeek.hours, sleepHoursWeek.dates, 'bar');
+  domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, sleepQualityWeek.quality, sleepQualityWeek.dates, 'line');
 }
 
 const getActivityData = (data) => {
@@ -111,12 +111,12 @@ const getActivityData = (data) => {
   const stairsWeek = activityData.findUserStairsWeek();
   const goalMet = activityData.determineStepGoalMet(stepGoal, date);
   domUpdates.displayTodaysData(todayActivity, date, stepsDate, stairsDate, minutesDate, milesWalked, goalMet);
-  domUpdates.displayChartPerWeek(numStepsWeekChart, numStepsWeek,  stepsWeek.steps, stepsWeek.dates, 'bar', 'Steps Per Week');
-  domUpdates.displayChartPerWeek(numActiveWeekChart, numActiveWeek, minutesWeek.minutes, minutesWeek.dates, 'line', 'Minutes Active Per Week');
-  domUpdates.displayChartPerWeek(numStarisClimbedWeekChart, numStarisClimbedWeek, stairsWeek.stairs, stairsWeek.dates, 'bar', 'Climbed stairs during the week');
-  domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'bar', 'Steps between current user and all users:', 'User Steps', 'Avg All Users');
-  domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'bar', 'Minutes active between current user and all users:', 'User Active Minutes', 'Avg All Users');
-  domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, averageStairsAllDate, milesWalked, 'bar', 'Miles between current user and all users:', 'User Floors Climbed', 'Avg All Users');
+  domUpdates.displayChartPerWeek(numStepsWeekChart, numStepsWeek,  stepsWeek.steps, stepsWeek.dates, 'bar');
+  domUpdates.displayChartPerWeek(numActiveWeekChart, numActiveWeek, minutesWeek.minutes, minutesWeek.dates, 'line');
+  domUpdates.displayChartPerWeek(numStarisClimbedWeekChart, numStarisClimbedWeek, stairsWeek.stairs, stairsWeek.dates, 'bar');
+  domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'bar', '', 'User Steps', 'Avg All Users');
+  domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'bar', '', 'User Active Minutes', 'Avg All Users');
+  domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, averageStairsAllDate, milesWalked, 'bar', '', 'User Floors Climbed', 'Avg All Users');
 }
 
 function showUserInfo() {
