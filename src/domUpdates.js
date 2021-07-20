@@ -78,16 +78,23 @@ let domUpdates = {
       },
       options: {
         title: {
-          display: true,
+          display: false,
           text: 'Hydration Average Per Today Information:',
           fontSize: 25
         },
+        plugins: {
+          legend: {
+            display: false,
+            position: 'bottom'
+          }
+        }
         }
       })
     },
 
   displayChartPerWeek(chartSection, htmlSection, dataInfo, dateInfo, chartStyle, dataType) {
     let dataInfoChart = new Chart(chartSection, {
+      text: 'This is a test',
       type: chartStyle,
       // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
       data: {
@@ -132,9 +139,11 @@ let domUpdates = {
           text: 'Hydration Average Per Week Information:',
           fontSize: 25
         },
-        legend: {
-          display: true,
-          position: 'right'
+        plugins: {
+          legend: {
+            display: false,
+            position: 'right',
+          }
         }
       }
     })
