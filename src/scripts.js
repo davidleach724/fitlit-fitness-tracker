@@ -171,9 +171,9 @@ domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, s
   domUpdates.displayChartPerWeek(numStepsWeekChart, numStepsWeek,  stepsWeek.steps, stepsWeek.dates, 'bar', 'Steps Per Week');
   domUpdates.displayChartPerWeek(numActiveWeekChart, numActiveWeek, minutesWeek.minutes, minutesWeek.dates, 'line', 'Minutes Active Per Week');
   domUpdates.displayChartPerWeek(numStarisClimbedWeekChart, numStarisClimbedWeek, stairsWeek.stairs, stairsWeek.dates, 'bar', 'Climbed stairs during the week');
-  domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'bar', 'Steps between current user and all users:', 'User total steps', 'All users stairs climbed');
-  domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'bar', 'Minutes active between current user and all users:', 'User total minutes', 'All users stairs climbed');
-  domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, averageStairsAllDate, milesWalked, 'bar', 'Miles between current user and all users:', 'User total stairs climbed', 'All users stairs climbed');
+  domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'bar', 'Steps between current user and all users:', 'User Steps', 'Avg All Users');
+  domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'bar', 'Minutes active between current user and all users:', 'User Active Minutes', 'Avg All Users');
+  domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, averageStairsAllDate, milesWalked, 'bar', 'Miles between current user and all users:', 'User Floors Climbed', 'Avg All Users');
 
 
 
