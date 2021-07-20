@@ -43,8 +43,8 @@ let domUpdates = {
       <h3>Sleep Data for ${date}</h3>
       <p>${dateHours} Hours</p>
       <p>${dateQuality} Quality</p>
-      <img src='./images/bed-solid.png' alt="bed icon" height="30px" width="35px">
-      <img src='./images/heartbeat-solid.png' alt="heart icon" height="30px" width="30px">
+      <p class="sleep-icons"><img src='./images/bed-solid.png' alt="bed icon" height="30px" width="35px">
+      <img src='./images/heartbeat-solid.png' alt="heart icon" height="30px" width="30px"></p>
       <h3>All-Time Sleep Averages</h3>
       <p>  ${averageHours} Hours</p>
       <p>${averageQuality} Quality</p>

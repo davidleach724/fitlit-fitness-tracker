@@ -56,6 +56,10 @@ h2 {
   height:300px;
 }
 
+.sleep-icons {
+  display: flex;
+  justify-content: space-around;
+}
 
 .user-data *:hover {
   cursor: pointer;
