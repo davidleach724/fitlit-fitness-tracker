@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
 let domUpdates = {
-  displayUserInfo(userInfo, currentUser, averageStepGoal) {
+  displayUserInfo(userInfo, currentUser, averageStepGoal, friendList) {
     userInfo.innerHTML = '';
     userInfo.insertAdjacentHTML('afterbegin',
     `
@@ -14,6 +14,7 @@ let domUpdates = {
      <p>Stride Length: ${currentUser.strideLength} feet</p>
      <p>Daily Step Goal: ${currentUser.dailyStepGoal} steps (average step goal is ${averageStepGoal})</p>
      <p>Number of Friends: ${currentUser.friends.length}</p>
+     <p>Friends: ${friendList.join(', ')}</p>
     </div>
     `)
   },

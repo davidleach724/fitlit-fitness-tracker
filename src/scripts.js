@@ -96,7 +96,7 @@ const getUserData = (data) => {
   stepGoal = currentUser.dailyStepGoal;
   const friendList = currentUser.determineFriends(userRepository.getUserNames());
   console.log(friendList);
-  domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
+  domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal, friendList);
 };
 
 const getHydrationData = (data) => {
