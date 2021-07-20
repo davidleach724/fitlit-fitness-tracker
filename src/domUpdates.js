@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
 let domUpdates = {
-  displayUserInfo(userInfo, currentUser) {
+  displayUserInfo(userInfo, currentUser, averageStepGoal) {
     userInfo.innerHTML = '';
     userInfo.insertAdjacentHTML('afterbegin',
     `
@@ -12,7 +12,7 @@ let domUpdates = {
      <p>Email: ${currentUser.email}</p>
      <p>Address: ${currentUser.address}</p>
      <p>Stride Length: ${currentUser.strideLength} feet</p>
-     <p>Daily Step Goal: ${currentUser.dailyStepGoal} steps</p>
+     <p>Daily Step Goal: ${currentUser.dailyStepGoal} steps (average step goal is ${averageStepGoal})</p>
      <p>Number of Friends: ${currentUser.friends.length}</p>
     </div>
     `)
@@ -35,6 +35,24 @@ let domUpdates = {
     )
   },
 
+  displaySleepData(sleepToday, date, dateHours, dateQuality, averageHours, averageQuality) {
+    sleepToday.innerHTML = '';
+    sleepToday.insertAdjacentHTML('afterbegin',
+    `
+    <div class='user-sleep-card' id='userSleepCard'>
+      <h3>Sleep Data for ${date}</h3>
+      <p>${dateHours} Hours</p>
+      <p>${dateQuality} Quality</p>
+      <img src='./images/bed-solid.png' alt="bed icon" height="30px" width="35px">
+      <img src='./images/heartbeat-solid.png' alt="heart icon" height="30px" width="30px">
+      <h3>All-Time Sleep Averages</h3>
+      <p>  ${averageHours} Hours</p>
+      <p>${averageQuality} Quality</p>
+    </div>
+    `
+    )
+  },
+  
   displayChartPerDay(chartSection, htmlSection, totalDataInfo, dataInfo, chartStyle, dataType, userInfo, totalInfo) {
     let dataInfoChart = new Chart(chartSection, {
       type: chartStyle,
