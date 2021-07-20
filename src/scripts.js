@@ -14,6 +14,7 @@ import './images/building-solid.png'
 import './images/stopwatch-solid.png'
 import './images/bed-solid.png'
 import './images/heartbeat-solid.png'
+import './images/user-solid.png'
 
 // Import from js files
 import domUpdates from './domUpdates';
@@ -26,7 +27,7 @@ import Activity from './Activity';
 
 // DOM ELEMENTS
 let userInfo = document.getElementById('userInfo');
-let turingLogo = document.getElementById('turingLogo');
+let userLogo = document.getElementById('userLogo');
 let todayActivity = document.getElementById('todayActivity');
 let hydrationAvgWeek = document.getElementById('hydrationAvgWeek');
 let hydratationPerWeekChart = document.getElementById('hydratationPerWeekChart').getContext('2d');
@@ -48,7 +49,7 @@ let numActiveWeekChart = document.getElementById('numActiveWeekChart').getContex
 let numStarisClimbedWeekChart = document.getElementById('numStarisClimbedWeekChart').getContext('2d');
 
 // EVENT LISTENERS
-turingLogo.addEventListener('click', showUserInfo);
+userLogo.addEventListener('click', showUserInfo);
 
 // GLOBAL VARIABLES
 let date = '2020/01/22'
