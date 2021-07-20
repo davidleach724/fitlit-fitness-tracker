@@ -29,182 +29,49 @@ h2 {
   margin: 5px;
 }
 
-
-/* .user-data {
-  display: grid;
-  grid-template-columns: 300px;
-} */
-
 .user-data {
-  /* width: auto; */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /* grid-template-rows: repeat(1, 1fr); */
-  grid-gap: 1.5%;
+  grid-template-columns: 300px;
+  grid-template-rows: 300px;
+}
+
+.data-container {
+ border: solid black 2px;
+ background: rgb(240, 255, 255);
+ border-radius: 10px;
+ margin: 5px;
+ width: 300px;
+ height:300px;
 }
 
 .today-activity {
   display: flex;
   justify-content: center;
-
   color: black;
-  background: rgb(168, 238, 246);
-  border: solid black 2px;
-  border-radius: 10px;
   text-align: center;
-  margin: 5px;
-}
-
-.hydration-avg-day {
+  background: rgb(240, 255, 255);
   border: solid black 2px;
   border-radius: 10px;
   margin: 5px;
-  box-sizing: content-box;
-  /* height: 200px;
-  background: rgb(210, 210, 210); */
+  width: 300px;
+  height:300px;
 }
 
-.hydration-avg-week {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white;
-  height: 200px;
-  width: 400px; */
-}
-
-.sleep-hours-last-day {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white;
-  height: 200px; */
-  /* width: 150px; */
-}
-
-.sleep-quality-last-day {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 150px; */
-}
-
-.sleep-hours-last-week {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 400px; */
-}
-
-.sleep-quality-last-week {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 400px; */
-}
-
-.sleep-hours-all-time {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 150px; */
-}
-
-.sleep-quality-all-time {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 150px; */
-}
-
-.num-steps-last-day {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 400px; */
-}
-
-.num-active-last-day {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 150px; */
-}
-
-.distance-walked-last-day {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 150px; */
-}
-
-.num-steps-week {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 400px; */
-}
-
-.num-active-week {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 150px; */
-}
-
-.num-stairs-climbed-week {
-  border: solid Black 2px;
-  margin: 5px;
-  /* background: white; */
-  /* height: 150px;
-  width: 150px; */
-}
 
 
 /* HOVER */
 .user-data *:hover {
   cursor: pointer;
-  box-shadow: 1px 2px 2px 3px #26222d;
-  margin: 3%;
-  transition: 0.5s ease width;
-  transition: 0.2s ease border;
-  border: solid rgb(18, 128, 93) 5px;
-  width: 92%;
+  background-color: white;
+  border-radius: 10px;
 }
-
-/* .hydration-avg-day, .hydration-avg-week, .sleep-hours-last-day, .sleep-quality-last-day, .sleep-hours-last-week, .sleep-quality-last-week, .sleep-hours-all-time, .sleep-quality-all-time, .num-steps-last-day, .num-active-last-day, .distance-walked-last-day, .num-steps-week, .num-active-week, */
- /* .num-active-week, .num-stairs-climbed-week:hover {
-  cursor: pointer;
-  box-shadow: 1px 2px 2px 3px #26222d;
-  margin: 0%;
-  transition: 0.5s ease width;
-  transition: 0.2s ease border;
-  border: solid rgb(18, 128, 93) 5px;
-  width: 94%;
-} */
-
-
-
-
-
-
 
 /* MEDIA QUERIES */
 /* 1025px and higher Desktops */
 @media only screen and (min-width: 1025px) {
   .user-data {
-    flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
     grid-gap: 1.5%;
   }
 }
@@ -212,7 +79,6 @@ h2 {
 /* 768px - 1024px | Tablets & iPads (landscape) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .user-data {
-    flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5%;
@@ -220,9 +86,8 @@ h2 {
 }
 
 /* 501px - 767px | small t ablets & mobile landscape */
-@media only screen and (min-width: 501px) and (max-width: 767px) and (orientation: landscape){
+@media only screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait){
   .user-data {
-    flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1%;
@@ -232,10 +97,9 @@ h2 {
 /* 320px to 5000px | Mobile Devices */
 @media only screen and (min-width: 320px) and (max-width: 500px) and (orientation: portrait){
   .user-data {
-    flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    /* grid-template-rows: repeat(1, 1fr); */
     grid-gap: 1%;
+    margin-left: 10%;
   }
 }

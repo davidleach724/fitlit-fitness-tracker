@@ -63,10 +63,6 @@ let domUpdates = {
           text: 'Hydration Average Per Today Information:',
           fontSize: 25
         },
-        legend: {
-            display: true,
-            position: 'right'
-          }
         }
       })
     },
