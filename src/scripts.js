@@ -101,9 +101,10 @@ const getHydrationData = (data) => {
   const hydrationWeek = hydrationData.findOuncesPerWeek();
 
   // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
-  domUpdates.displayChartPerDay(hydratationPerDayChart, hydrationAvgDay,  hydrationAverage, hydrationToday, 'line', 'Hydration Today');
   domUpdates.displayChartPerWeek(hydratationPerWeekChart, hydrationAvgWeek, hydrationWeek.ounces, hydrationWeek.dates, 'bar', 'Hydration Per Week');
 
+
+  // domUpdates.displayChartPerDay(hydratationPerDayChart, hydrationAvgDay,  hydrationAverage, hydrationToday, 'line', 'Hydration Today');
 
   // console.log('hydration data: ', hydrationData);
   // console.log('hydration avg: ', hydrationAverage);
@@ -120,13 +121,16 @@ const sleepQualityWeek = sleepData.findSleepQualityWeek()
 const sleepHourAverage = sleepData.findSleepHourAverage();
 const sleepQualityAverage = sleepData.findSleepQualityAverage();
 
-// bar, horizontalBar, pie, line, doughnut, radar, ploarArea
-domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'bar', 'Slept Hours Today');
-domUpdates.displayChartPerDay(sleepQualityLastDayChart, sleepQualityLastDay, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Slept Quality Today');
+
 domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  sleepHoursWeek.hours, sleepHoursWeek.dates, 'bar', 'Slept Hours Per Week');
 domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, sleepQualityWeek.quality, sleepQualityWeek.dates, 'line', 'Slept Quality Per Week');
-domUpdates.displayChartPerDay(sleepHoursAllTimeChart, sleepHoursAllTime,  sleepHourAverage, sleepHoursDate, 'pie', 'Total Slept Hours');
-domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sleepQualityAverage, sleepQualityDate, 'bar', 'Total Slept Quality');
+
+
+// bar, horizontalBar, pie, line, doughnut, radar, ploarArea
+// domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'bar', 'Slept Hours Today', );
+// domUpdates.displayChartPerDay(sleepQualityLastDayChart, sleepQualityLastDay, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Slept Quality Today');
+// domUpdates.displayChartPerDay(sleepHoursAllTimeChart, sleepHoursAllTime,  sleepHourAverage, sleepHoursDate, 'pie', 'Total Slept Hours');
+// domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sleepQualityAverage, sleepQualityDate, 'bar', 'Total Slept Quality');
 
 //  console.log('sleep class: ', sleepData);
 //  console.log('sleep hours for date: ', sleepHoursDate);
@@ -154,13 +158,19 @@ domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sle
 
   // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
   domUpdates.displayTodaysData(todayActivity, date, stepsDate, stairsDate, minutesDate, milesWalked, goalMet);
-
-  domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'polarArea', 'Number steps from last date');
-  domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'doughnut', 'Number active from last date');
-  domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, goalMet, milesWalked, 'line', 'Distance in miles from last date');
   domUpdates.displayChartPerWeek(numStepsWeekChart, numStepsWeek,  stepsWeek.steps, stepsWeek.dates, 'bar', 'Steps Per Week');
   domUpdates.displayChartPerWeek(numActiveWeekChart, numActiveWeek, minutesWeek.minutes, minutesWeek.dates, 'line', 'Minutes Active Per Week');
   domUpdates.displayChartPerWeek(numStarisClimbedWeekChart, numStarisClimbedWeek, stairsWeek.stairs, stairsWeek.dates, 'bar', 'Climbed stairs during the week');
+  domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'bar', 'Steps between current user and all users:', 'User total steps', 'All users stairs climbed');
+  domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'bar', 'Minutes active between current user and all users:', 'User total minutes', 'All users stairs climbed');
+  domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, averageStairsAllDate, milesWalked, 'bar', 'Miles between current user and all users:', 'User total stairs climbed', 'All users stairs climbed');
+
+
+
+  // domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'polarArea', 'Number steps from last date');
+  // domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'doughnut', 'Number active from last date');
+  // domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, goalMet, milesWalked, 'line', 'Distance in miles from last date');
+
 
 
   // console.log('steps:', stepsDate);

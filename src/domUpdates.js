@@ -24,7 +24,7 @@ let domUpdates = {
     `
     <div class='user-activity-date' id='userActivityDate'>
       <h3>Activity For Today, ${date}</h3>
-      
+
       <p><img src="./images/shoe-prints-solid.png" alt="steps icon" height="30px" width="30px">  ${steps} Steps</p>
       <p><img src="./images/building-solid.png" alt="building icon" height="30px" width="25px">  ${floors} Floors</p>
       <p><img src="./images/stopwatch-solid.png" alt="clock icon" height="30px" width="25px">  ${minActive} Min. Active</p>
@@ -35,12 +35,12 @@ let domUpdates = {
     )
   },
 
-  displayChartPerDay(chartSection, htmlSection, totalDataInfo, dataInfo, chartStyle, dataType) {
+  displayChartPerDay(chartSection, htmlSection, totalDataInfo, dataInfo, chartStyle, dataType, userInfo, totalInfo) {
     let dataInfoChart = new Chart(chartSection, {
       type: chartStyle,
       // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
       data: {
-        labels: ['Total Avg', 'Today Avg'],
+        labels: [userInfo, totalInfo],
         datasets: [{
           label: dataType,
           data: [
@@ -101,9 +101,9 @@ let domUpdates = {
             'rgba(255, 99, 112, 0.6)',
             'rgba(201, 90, 102, 0.6)'
           ],
-          borderWidth: 1,
+          borderWidth: 2,
           borderColor: '#777',
-          hoverBorderWidth: 5,
+          hoverBorderWidth: 7,
           hoverBorderColor: '#fff'
         }]
       },

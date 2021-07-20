@@ -57,9 +57,7 @@ h2 {
 }
 
 
-
-/* HOVER */
-.user-data *:hover {
+.num-stairs-climbed-week:hover {
   cursor: pointer;
   background-color: white;
   border-radius: 10px;
