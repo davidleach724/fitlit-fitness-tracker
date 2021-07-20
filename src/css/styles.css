@@ -34,34 +34,34 @@ h2 {
   grid-template-rows: 300px;
 }
 
+.data-container {
+ border: solid black 2px;
+ background: rgb(240, 255, 255);
+ border-radius: 10px;
+ margin: 5px;
+ width: 300px;
+ height:300px;
+}
+
 .today-activity {
   display: flex;
   justify-content: center;
   color: black;
+  text-align: center;
   background: rgb(240, 255, 255);
   border: solid black 2px;
   border-radius: 10px;
-  text-align: center;
   margin: 5px;
   width: 300px;
   height:300px;
 }
 
- .data-container {
-  border: solid black 2px;
-  background: rgb(240, 255, 255);
-  border-radius: 10px;
-  margin: 5px;
-  width: 300px;
-  height:300px;
-}
 
 
 /* HOVER */
 .user-data *:hover {
   cursor: pointer;
   background-color: white;
-  border: solid white 2px;
   border-radius: 10px;
 }
 
