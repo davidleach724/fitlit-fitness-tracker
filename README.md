@@ -1,82 +1,51 @@
 # FitLit Starter Kit
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+## Contributors
+  - [David Leach](https://github.com/davidleach724)
+  - [Andrey Bermudez](https://github.com/Andrey-1992)
 
-## Setup
+## Context
+FitLit is all about your Journey to Health. By using FitLit, you get up to the minute info about various aspects of your daily health, including: water intake, steps taken, sleep information, during the day or a pass of a week !
+The user is able to view personal user information by clicking the user icon on the top right of the page.
+This websites offers multiple views depending on the user device; These views include Mobile Devices, iPad and Desktop.
 
-1. Within your group, decide on one person to have the project repository (repo) on their GitHub account. Then, that person should fork this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `npm start` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page)
-1. Make sure both members of your team are collaborators on the forked repo.
 
-## Testing
+#### Technologies used:
+  * JavaScript
+  * GitHub
+  * HTML
+  * CSS
+  * Dependencies
 
-There is no boilerplate for testing in this starter-kit repo. You will need to set this up yourself. However, if you ran `npm install`, then the tooling you need to start testing is already installed (`mocha` and `chai`).
+## Challenges
+  * Implement fetch calls to work with an API.
+  * Implementation of SRP in classes and functions.
+  * Create a clear and responsive application board.
 
-## Linting Your Code
+## Wins
+  * TTD, chai-testing library and mocha-framework set up.
+  * Project planning and organization
+  * Array prototype methods
+  * Use of dependency of `chart.js`
+  * Practice OOP while creating the application
+  * Using the project board * issues to keep track of the progress.
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit, but that's ok - the linter is still running successfully.
+## Future Goals
+  * Add an Admin view, which will display the views of data from all users.
+  * Incorporate a dynamic calendar that the user can interact with it !
 
-Your linter will look only at the JavaScript files you have within the `src` and the `test` directories.
+## In Action
+![App Demo](https://media.giphy.com/media/fM8fBNPfilZv9nzSDG/giphy.gif)
 
-## Data Model
+## Project Directions
+[fit-lit specifications](https://frontend.turing.io/projects/fitlit.html)
 
-**Users**
-
-```
-[
-  {
-    "id": [number],
-    "name": [string],
-    "address": [string],
-    "email": [string],
-    "strideLength": [number - feet],
-    "dailyStepGoal": [number - steps],
-    "friends": [array - one-way connection to other user(s)]
-  },
-  ...more user data
-]
-```
-
-**Activity**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numSteps": [number - steps],
-    "minutesActive": [number - minutes],
-    "flightsOfStairs": [number - flights]
-  },
-  ...more activity data
-]
-```
-
-**Hydration**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numOunces": [number - ounces]
-  },
-  ...more hydration data
-]
-```
-
-**Sleep**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "hoursSlept": [number - hours],
-    "sleepQuality": [number - unitless]
-  },
-  ...more sleep data
-]
-```
+### Set up
+* On the top right corner of this page, click the **Fork** button.
+- clone the repository to your computer `git clone <URL>`
+- Run git clone - git clone [remote-address] [what you want to name the repo]
+  replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
+- cd into the repository `cd <repo-name>`
+- Run `npm install`
+- Run `npm start `  in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page)
+- [Do not forget to fork and keep the instructions for this repository, in order to set up the API for this project](https://github.com/turingschool-examples/fitlit-api)
