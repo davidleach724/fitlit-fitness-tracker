@@ -2,10 +2,10 @@
 // Do not delete or rename this file ********
 
 
-// An example of how you tell webpack to use a CSS file
+// Import CSS file
 import './css/styles.css';
 
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
+// Import Images
 import './images/turing-logo.png';
 import './images/mosaic.png'
 import './images/shoe-prints-solid.png'
@@ -14,46 +14,28 @@ import './images/building-solid.png'
 import './images/stopwatch-solid.png'
 import './images/bed-solid.png'
 import './images/heartbeat-solid.png'
+import './images/user-solid.png'
 
-//console.log('This is the JavaScript entry file - your code begins here.');
-
-// An example of how you tell webpack to use a JS file
+// Import from js files
 import domUpdates from './domUpdates';
 import UserRepository from './UserRepository';
 import User from './User';
 import Hydration from './Hydration';
 import Sleep from './Sleep';
 import Activity from './Activity';
-import Chart from 'chart.js/auto';
-
 
 
 // DOM ELEMENTS
 let userInfo = document.getElementById('userInfo');
-let turingLogo = document.getElementById('turingLogo');
-
+let userLogo = document.getElementById('userLogo');
 let todayActivity = document.getElementById('todayActivity');
-
-// let hydrationAvgDay = document.getElementById('hydrationAvgDay');
 let hydrationAvgWeek = document.getElementById('hydrationAvgWeek');
-//let hydratationPerDayChart = document.getElementById('hydratationPerDayChart').getContext('2d');
 let hydratationPerWeekChart = document.getElementById('hydratationPerWeekChart').getContext('2d');
-
 let sleepToday = document.getElementById('todaySleep');
 let sleepHoursLastDay = document.getElementById('sleepHoursLastDay');
 let sleepQualityLastDay = document.getElementById('sleepQualityLastDay');
-// let sleepHoursLastWeek = document.getElementById('sleepHoursLastWeek');
-// let sleepQualityLastWeek = document.getElementById('sleepQualityLastWeek');
-// let sleepHoursAllTime = document.getElementById('sleepHoursAllTime');
-// let sleepQualityAllTime = document.getElementById('sleepQualityAllTime');
-// let sleepHoursLastDayChart = document.getElementById('sleepHoursLastDayChart').getContext('2d');
-// let sleepQualityLastDayChart = document.getElementById('sleepQualityLastDayChart').getContext('2d');
 let sleepHoursLastWeekChart = document.getElementById('sleepHoursLastWeekChart').getContext('2d');
 let sleepQualityLastWeekChart = document.getElementById('sleepQualityLastWeekChart').getContext('2d');
-// let sleepHoursAllTimeChart = document.getElementById('sleepHoursAllTimeChart').getContext('2d');
-// let sleepQualityAllTimeChart = document.getElementById('sleepQualityAllTimeChart').getContext('2d');
-
-// let numStepsLastDay = document.getElementById('numStepsLastDay');
 let numActiveLastDay = document.getElementById('numActiveLastDay');
 let distanceWalkedLastDay = document.getElementById('distanceWalkedLastDay');
 let numStepsWeek = document.getElementById('numStepsWeek');
@@ -66,11 +48,8 @@ let numStepsWeekChart = document.getElementById('numStepsWeekChart').getContext(
 let numActiveWeekChart = document.getElementById('numActiveWeekChart').getContext('2d');
 let numStarisClimbedWeekChart = document.getElementById('numStarisClimbedWeekChart').getContext('2d');
 
-
-
 // EVENT LISTENERS
-turingLogo.addEventListener('click', showUserInfo);
-
+userLogo.addEventListener('click', showUserInfo);
 
 // GLOBAL VARIABLES
 let date = '2020/01/22'
@@ -95,63 +74,31 @@ const getUserData = (data) => {
   strideLength = currentUser.strideLength;
   stepGoal = currentUser.dailyStepGoal;
   const friendList = currentUser.determineFriends(userRepository.getUserNames());
-  console.log(friendList);
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal, friendList);
 };
 
 const getHydrationData = (data) => {
   const hydrationData = new Hydration(data, randomID);
-  // const hydrationAverage = hydrationData.findHydrationAverage();
-  // const hydrationToday = hydrationData.findCurrentHydration(date);
   const hydrationWeek = hydrationData.findOuncesPerWeek();
 
-  // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
-  domUpdates.displayChartPerWeek(hydratationPerWeekChart, hydrationAvgWeek, hydrationWeek.ounces, hydrationWeek.dates, 'bar', 'Hydration Per Week');
-
-
-  // domUpdates.displayChartPerDay(hydratationPerDayChart, hydrationAvgDay,  hydrationAverage, hydrationToday, 'line', 'Hydration Today');
-
-  // console.log('hydration data: ', hydrationData);
-  // console.log('hydration avg: ', hydrationAverage);
-  // console.log('hydration today: ', hydrationToday);
-  // console.log('hydration week: ', hydrationWeek);
+  domUpdates.displayChartPerWeek(hydratationPerWeekChart, hydrationAvgWeek, hydrationWeek.ounces, hydrationWeek.dates, 'bar');
 }
 
 const getSleepData = (data) => {
-const sleepData = new Sleep(data, randomID);
-const sleepHoursDate = sleepData.findCurrentSleepHours(date);
-const sleepQualityDate = sleepData.findCurrentSleepQuality(date);
-const sleepHoursWeek = sleepData.findSleepWeek();
-const sleepQualityWeek = sleepData.findSleepQualityWeek()
-const sleepHourAverage = sleepData.findSleepHourAverage();
-const sleepQualityAverage = sleepData.findSleepQualityAverage();
+  const sleepData = new Sleep(data, randomID);
+  const sleepHoursDate = sleepData.findCurrentSleepHours(date);
+  const sleepQualityDate = sleepData.findCurrentSleepQuality(date);
+  const sleepHoursWeek = sleepData.findSleepWeek();
+  const sleepQualityWeek = sleepData.findSleepQualityWeek()
+  const sleepHourAverage = sleepData.findSleepHourAverage();
+  const sleepQualityAverage = sleepData.findSleepQualityAverage();
 
-
-// bar, horizontalBar, pie, line, doughnut, radar, ploarArea
-domUpdates.displaySleepData(sleepToday, date, sleepHoursDate, sleepQualityDate, sleepHourAverage, sleepQualityAverage);
-// domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'bar', 'Slept Hours Today');
-// domUpdates.displayChartPerDay(sleepQualityLastDayChart, sleepQualityLastDay, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Slept Quality Today');
-
-domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  sleepHoursWeek.hours, sleepHoursWeek.dates, 'bar', 'Slept Hours Per Week');
-domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, sleepQualityWeek.quality, sleepQualityWeek.dates, 'line', 'Slept Quality Per Week');
-
-
-// bar, horizontalBar, pie, line, doughnut, radar, ploarArea
-// domUpdates.displayChartPerDay(sleepHoursLastDayChart, sleepHoursLastDay,  sleepHourAverage, sleepHoursDate, 'bar', 'Slept Hours Today', );
-// domUpdates.displayChartPerDay(sleepQualityLastDayChart, sleepQualityLastDay, sleepQualityAverage, sleepQualityDate, 'doughnut', 'Slept Quality Today');
-// domUpdates.displayChartPerDay(sleepHoursAllTimeChart, sleepHoursAllTime,  sleepHourAverage, sleepHoursDate, 'pie', 'Total Slept Hours');
-// domUpdates.displayChartPerDay(sleepQualityAllTimeChart, sleepQualityAllTime, sleepQualityAverage, sleepQualityDate, 'bar', 'Total Slept Quality');
-
-//  console.log('sleep class: ', sleepData);
-//  console.log('sleep hours for date: ', sleepHoursDate);
- // console.log('sleep quality for date: ', sleepQualityDate)
- // console.log('sleep week: ', sleepHoursWeek.hours);
- // console.log('sleep quality: ', sleepQualityWeek.quality);
-//  console.log('sleep hour avg: ', sleepHourAverage);
-//  console.log('sleep qual avg: ', sleepQualityAverage);
+  domUpdates.displaySleepData(sleepToday, date, sleepHoursDate, sleepQualityDate, sleepHourAverage, sleepQualityAverage);
+  domUpdates.displayChartPerWeek(sleepHoursLastWeekChart, sleepHoursLastDay,  sleepHoursWeek.hours, sleepHoursWeek.dates, 'bar');
+  domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, sleepQualityWeek.quality, sleepQualityWeek.dates, 'line');
 }
 
-  const getActivityData = (data) => {
+const getActivityData = (data) => {
   const activityData = new Activity(data, randomID);
   const stepsDate = activityData.findUserSteps(date);
   const minutesDate = activityData.findUserMinutes(date);
@@ -164,38 +111,13 @@ domUpdates.displayChartPerWeek(sleepQualityLastWeekChart, sleepQualityLastDay, s
   const stepsWeek = activityData.findUserStepsWeek();
   const stairsWeek = activityData.findUserStairsWeek();
   const goalMet = activityData.determineStepGoalMet(stepGoal, date);
-
-
-  // bar, horizontalBar, pie, line, doughnut, radar, ploarArea
   domUpdates.displayTodaysData(todayActivity, date, stepsDate, stairsDate, minutesDate, milesWalked, goalMet);
-  domUpdates.displayChartPerWeek(numStepsWeekChart, numStepsWeek,  stepsWeek.steps, stepsWeek.dates, 'bar', 'Steps Per Week');
-  domUpdates.displayChartPerWeek(numActiveWeekChart, numActiveWeek, minutesWeek.minutes, minutesWeek.dates, 'line', 'Minutes Active Per Week');
-  domUpdates.displayChartPerWeek(numStarisClimbedWeekChart, numStarisClimbedWeek, stairsWeek.stairs, stairsWeek.dates, 'bar', 'Climbed stairs during the week');
-  domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'bar', 'Steps between current user and all users:', 'User Steps', 'Avg All Users');
-  domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'bar', 'Minutes active between current user and all users:', 'User Active Minutes', 'Avg All Users');
-  domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, averageStairsAllDate, milesWalked, 'bar', 'Miles between current user and all users:', 'User Floors Climbed', 'Avg All Users');
-
-
-
-  // domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'polarArea', 'Number steps from last date');
-  // domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'doughnut', 'Number active from last date');
-  // domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, goalMet, milesWalked, 'line', 'Distance in miles from last date');
-
-
-
-  // console.log('steps:', stepsDate);
-  // console.log('minutes: ', minutesDate);
-  // console.log('stairs: ', stairsDate)
-  // console.log('miles walked: ', milesWalked);
-  // console.log('average stairs all: ', averageStairsAllDate);
-  // console.log('average steps all: ', averageStepsAllDate);
-  // console.log('average minutes all: ', averageMinutesAllDate);
-  // console.log('minutes week: ', minutesWeek);
-  // console.log('steps week: ', stepsWeek);
-  // console.log('stairs week: ', stairsWeek);
-  // console.log('stride length: ', strideLength);
-  // console.log('Step goal: ', stepGoal);
-  // console.log('Step goal met: ', goalMet);
+  domUpdates.displayChartPerWeek(numStepsWeekChart, numStepsWeek,  stepsWeek.steps, stepsWeek.dates, 'bar');
+  domUpdates.displayChartPerWeek(numActiveWeekChart, numActiveWeek, minutesWeek.minutes, minutesWeek.dates, 'line');
+  domUpdates.displayChartPerWeek(numStarisClimbedWeekChart, numStarisClimbedWeek, stairsWeek.stairs, stairsWeek.dates, 'bar');
+  domUpdates.displayChartPerDay(numStepsLastDayChart, numStepsLastDayChart,  averageStepsAllDate, stepsDate, 'bar', '', 'User Steps', 'Avg All Users');
+  domUpdates.displayChartPerDay(numActiveLastDayChart, numActiveLastDay, averageMinutesAllDate, minutesDate, 'bar', '', 'User Active Minutes', 'Avg All Users');
+  domUpdates.displayChartPerDay(distanceWalkedLastDayChart, distanceWalkedLastDay, averageStairsAllDate, milesWalked, 'bar', '', 'User Floors Climbed', 'Avg All Users');
 }
 
 function showUserInfo() {
