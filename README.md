@@ -5,6 +5,7 @@
   - [Andrey Bermudez](https://github.com/Andrey-1992)
 
 ## Context
+FitLit is all about your Journey to Health. By using FitLit, you get up to the minute info about various aspects of your daily health, including water intake, steps taken, sleep information, and more! You can also compare your activity to your friends to compete for Healthy Bragging Rights!
 
 
 #### Technologies used:
@@ -16,12 +17,8 @@
   * Dependencies
 
 ## Challenges
-  * Incorporating new libraries to the project.
-  * Planning and organizing the classes properly for this project.
   * Implement fetch calls to work with an API.
   * Implement the SRP in classes and functions.
-  * Implementation of array prototype methods.
-  * Build data sets and proper test suites for classes.
   * Create a clear and responsive application board.
 
 ## Wins
@@ -37,19 +34,7 @@
   * Incorporate a dynamic calendar that the user can interact with it !
 
 ## In Action
-
-#### Take 1
-* When the user is opens the application using the browser, the user can see the navigation bar that displays the "challenge of day". The user also has the opportunity to choose to display the information from 5 different users using the drop down menu. On the right side of the navigation bar, the user can also display old data by choosing a different date from the menu of dates.
-  <img src="https://media.giphy.com/media/LmIHj8Pcxn8VigHftl/giphy.gif" alt="by choosing a different user or picking a different data the user can display data from the option of 5 different user profiles" height=auto width=75%/>
-
-#### Take 2
-* The application has been divided into different sections:
-  - Activity Hydration, sleep, friends list and friends goals
-  <img src="https://media.giphy.com/media/Veeu8uxnCAjSev3XR1/giphy.gif" alt="The application has been divided in sections, the activity section show information about number of steps , number of minues, distance walked in miles and aa chart that compares the user's number of steps, minutes active, and flights of stairs climbed compares to the rest of the users" height=auto width=75%/>
-
-#### Take 3
-* Responsivess was built by using media queries
-  <img src="https://media.giphy.com/media/jpth8OxNU2Yz1AIfSe/giphy.gif" alt="" height=auto width=75%/>
+![App Demo](https://media.giphy.com/media/fM8fBNPfilZv9nzSDG/giphy.gif)
 
 ## Project Directions
 [fit-lit specifications](https://frontend.turing.io/projects/fitlit.html)
