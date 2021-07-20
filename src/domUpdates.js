@@ -66,8 +66,8 @@ let domUpdates = {
             totalDataInfo,
           ],
           backgroundColor: [
-              'rgba(255, 99, 132, 0.6)',
-              'rgba(35, 79, 130, 0.6)'
+              'rgba(255, 99, 132, 1)',
+              'rgba(35, 79, 130, 1)'
           ],
           borderWidth: 1,
           borderColor: '#777',
@@ -117,13 +117,13 @@ let domUpdates = {
             dataInfo[6]
           ],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.6)',
-            'rgba(35, 79, 130, 0.6)',
-            'rgba(255, 89, 129, 0.6)',
-            'rgba(75, 99, 132, 0.6)',
-            'rgba(155, 91, 122, 0.6)',
-            'rgba(255, 99, 112, 0.6)',
-            'rgba(201, 90, 102, 0.6)'
+            'rgba(255, 99, 132, 1)',
+            'rgba(35, 79, 130, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(35, 79, 130, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(35, 79, 130, 1)',
+            'rgba(255, 99, 132, 1)'
           ],
           borderWidth: 2,
           borderColor: '#777',
