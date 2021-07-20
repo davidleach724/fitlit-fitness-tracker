@@ -18,8 +18,11 @@
 ## Challenges
   * Incorporating new libraries to the project.
   * Planning and organizing the classes properly for this project.
-  * Struggled to get enough refactoring done in the first place, and generally done on time.
-  * didn't "meet" all our milestone dates, primarily because of how we set them at the beginning, more so than running behind.
+  * Implement fetch calls to work with an API.
+  * Implement the SRP in classes and functions.
+  * Implementation of array prototype methods.
+  * Build data sets and proper test suites for classes.
+  * Create a clear and responsive application board.
 
 ## Wins
   * TTD, chai-testing library and mocha-framework set up.
