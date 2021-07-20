@@ -73,7 +73,6 @@ const getUserData = (data) => {
   strideLength = currentUser.strideLength;
   stepGoal = currentUser.dailyStepGoal;
   const friendList = currentUser.determineFriends(userRepository.getUserNames());
-  console.log(friendList);
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal, friendList);
 };
 
