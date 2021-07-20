@@ -94,6 +94,8 @@ const getUserData = (data) => {
   const currentUser = new User(userRepository.getUserData(randomID));
   strideLength = currentUser.strideLength;
   stepGoal = currentUser.dailyStepGoal;
+  const friendList = currentUser.determineFriends(userRepository.getUserNames());
+  console.log(friendList);
   domUpdates.displayUserInfo(userInfo, currentUser, averageStepGoal);
 };
 
