@@ -36,10 +36,9 @@ h2 {
 } */
 
 .user-data {
-  /* width: auto; */
+  flex-wrap: wrap;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* grid-template-rows: repeat(1, 1fr); */
   grid-gap: 1.5%;
 }
 
@@ -55,6 +54,13 @@ h2 {
   margin: 5px;
 }
 
+.today-activity:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
+}
+
 .hydration-avg-day {
   border: solid black 2px;
   border-radius: 10px;
@@ -62,6 +68,13 @@ h2 {
   box-sizing: content-box;
   /* height: 200px;
   background: rgb(210, 210, 210); */
+}
+
+.hydration-avg-day:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
 }
 
 .hydration-avg-week {
@@ -72,12 +85,26 @@ h2 {
   width: 400px; */
 }
 
+.hydration-avg-week:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
+}
+
 .sleep-hours-last-day {
   border: solid Black 2px;
   margin: 5px;
   /* background: white;
   height: 200px; */
   /* width: 150px; */
+}
+
+.sleep-hours-last-day:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
 }
 
 .sleep-quality-last-day {
@@ -88,12 +115,26 @@ h2 {
   width: 150px; */
 }
 
+.sleep-quality-last-day:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
+}
+
 .sleep-hours-last-week {
   border: solid Black 2px;
   margin: 5px;
   /* background: white; */
   /* height: 150px;
   width: 400px; */
+}
+
+.sleep-hours-last-week:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
 }
 
 .sleep-quality-last-week {
@@ -104,12 +145,26 @@ h2 {
   width: 400px; */
 }
 
+.sleep-quality-last-week:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
+}
+
 .sleep-hours-all-time {
   border: solid Black 2px;
   margin: 5px;
   /* background: white; */
   /* height: 150px;
   width: 150px; */
+}
+
+.sleep-hours-all-time:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
 }
 
 .sleep-quality-all-time {
@@ -120,12 +175,26 @@ h2 {
   width: 150px; */
 }
 
+.sleep-quality-all-time:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
+}
+
 .num-steps-last-day {
   border: solid Black 2px;
   margin: 5px;
   /* background: white; */
   /* height: 150px;
   width: 400px; */
+}
+
+.num-steps-last-day:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
 }
 
 .num-active-last-day {
@@ -136,12 +205,26 @@ h2 {
   width: 150px; */
 }
 
+.num-active-last-day:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
+}
+
 .distance-walked-last-day {
   border: solid Black 2px;
   margin: 5px;
   /* background: white; */
   /* height: 150px;
   width: 150px; */
+}
+
+.distance-walked-last-day:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
 }
 
 .num-steps-week {
@@ -152,12 +235,26 @@ h2 {
   width: 400px; */
 }
 
+.num-steps-week:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
+}
+
 .num-active-week {
   border: solid Black 2px;
   margin: 5px;
   /* background: white; */
   /* height: 150px;
   width: 150px; */
+}
+
+.num-active-week:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
 }
 
 .num-stairs-climbed-week {
@@ -168,9 +265,16 @@ h2 {
   width: 150px; */
 }
 
+.num-stairs-climbed-week:hover {
+  cursor: pointer;
+  /* box-shadow: 1px 2px 2px 3px #26222d; */
+  /* margin: 3%; */
+  border: solid rgb(18, 128, 93) 5px;
+}
+
 
 /* HOVER */
-.user-data *:hover {
+/* .user-data *:hover {
   cursor: pointer;
   box-shadow: 1px 2px 2px 3px #26222d;
   margin: 3%;
@@ -178,22 +282,7 @@ h2 {
   transition: 0.2s ease border;
   border: solid rgb(18, 128, 93) 5px;
   width: 92%;
-}
-
-/* .hydration-avg-day, .hydration-avg-week, .sleep-hours-last-day, .sleep-quality-last-day, .sleep-hours-last-week, .sleep-quality-last-week, .sleep-hours-all-time, .sleep-quality-all-time, .num-steps-last-day, .num-active-last-day, .distance-walked-last-day, .num-steps-week, .num-active-week, */
- /* .num-active-week, .num-stairs-climbed-week:hover {
-  cursor: pointer;
-  box-shadow: 1px 2px 2px 3px #26222d;
-  margin: 0%;
-  transition: 0.5s ease width;
-  transition: 0.2s ease border;
-  border: solid rgb(18, 128, 93) 5px;
-  width: 94%;
 } */
-
-
-
-
 
 
 
@@ -212,6 +301,8 @@ h2 {
 /* 768px - 1024px | Tablets & iPads (landscape) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .user-data {
+    /* width: 100%;
+    height: 100%; */
     flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
