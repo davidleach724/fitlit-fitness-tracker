@@ -23,7 +23,7 @@ let sleep ;
 
   it('should have a property to storage all the sleep data', function() {
 
-    expect(sleep.sleepInfo).to.deep.equal(sleepData);
+    expect(sleep.sleepInfo).to.deep.equal([{sleepData}]);
   });
 
    it('should return how many hours they slept for a specific day', () => {
