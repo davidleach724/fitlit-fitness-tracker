@@ -4,8 +4,9 @@ const expect = chai.expect;
 import Activity from '../src/Activity';
 import activityData from '../src/data/activityData';
 
-describe.only('Activity', () => {
+describe('Activity', () => {
   let activity;
+
   beforeEach(() => {
     activity = new Activity(activityData, 1);
   });
@@ -31,9 +32,9 @@ describe.only('Activity', () => {
   })
 
   it('should determine if the user has met their step goal', () => {
-    expect(activity.determineStepGoalMet(10000, '2019/06/19')).to.equal(false);
-    expect(activity.determineStepGoalMet(5000, '2019/06/19')).to.equal(true);
-  })
+     expect(activity.determineStepGoalMet(10000, '2019/06/19')).to.equal('You need 1571 more steps to complete your goal, keep it up!');
+     expect(activity.determineStepGoalMet(5000, '2019/06/19')).to.equal('Nice! You met your step goal for today!');
+   })
 
   it('should return all dates step goal was met', () => {
     expect(activity.findMetStepGoalDays(10000)).to.be.an('array');
@@ -47,7 +48,7 @@ describe.only('Activity', () => {
     expect(activity.findAverageStairsAll('2019/06/19')).to.equal(14.2);
   })
 
-  it('should return the average steps of all users for a date', () => { 
+  it('should return the average steps of all users for a date', () => {
     expect(activity.findAverageStepsAll('2019/06/19')).to.equal(10322);
   })
 

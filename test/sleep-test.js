@@ -23,7 +23,7 @@ let sleep ;
 
   it('should have a property to storage all the sleep data', function() {
 
-    expect(sleep.sleepInfo).to.deep.equal(sleepData);
+    expect(sleep.sleepInfo).to.be.an('array');
   });
 
    it('should return how many hours they slept for a specific day', () => {
@@ -38,12 +38,12 @@ let sleep ;
 
   it('should should return how many hours slept each day over the course of a week', function() {
 
-    expect(sleep.findSleepWeek()).to.deep.equal([ 4.2, 8, 9.4, 8.4, 4, 7.5, 5.1 ])
+    expect(sleep.findSleepWeek().hours).to.deep.equal([ 4.2, 8, 9.4, 8.4, 4, 7.5, 5.1 ])
   });
 
   it('should should return  their sleep quality each day over the course of a week', function() {
 
-    expect(sleep.findSleepQualityWeek()).to.deep.equal([ 3.6, 2.9, 2.6, 3.5, 2.2, 1.6, 3.9 ])
+    expect(sleep.findSleepQualityWeek().quality).to.deep.equal([ 3.6, 2.9, 2.6, 3.5, 2.2, 1.6, 3.9 ])
   });
 
   it('should return the average number of hours slept per day', () => {

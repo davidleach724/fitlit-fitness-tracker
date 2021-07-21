@@ -24,8 +24,7 @@ let hydration ;
   });
 
   it('should have a property to storage all the hydration data', function() {
-
-    expect(hydration.hydrationInfo).to.be.equal(hydrationData);
+    expect(hydration.hydrationInfo).to.be.an('array');
   });
 
   it('should return average oz per day', () => {
@@ -40,7 +39,7 @@ let hydration ;
 
   it('should should return how many ounces consumed per week', function() {
 
-    expect(hydration.findOuncesPerWeek(1)).to.deep.equal([ 42, 87, 94, 84, 39, 75, 51 ])
+    expect(hydration.findOuncesPerWeek(1).ounces).to.deep.equal([ 42, 87, 94, 84, 39, 75, 51 ])
   });
 
 });

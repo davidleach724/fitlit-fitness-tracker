@@ -239,4 +239,4 @@ const activityData = [
   }
 ]
 
-export default activityData;
+export default { activityData };
