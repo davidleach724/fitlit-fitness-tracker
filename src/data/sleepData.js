@@ -199,4 +199,4 @@ const sleepData = [
     }
 ];
 
-export default sleepData;
+export default { sleepData };
