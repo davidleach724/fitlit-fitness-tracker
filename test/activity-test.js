@@ -4,8 +4,9 @@ const expect = chai.expect;
 import Activity from '../src/Activity';
 import activityData from '../src/data/activityData';
 
-describe.only('Activity', () => {
+describe('Activity', () => {
   let activity;
+
   beforeEach(() => {
     activity = new Activity(activityData, 1);
   });
@@ -47,7 +48,7 @@ describe.only('Activity', () => {
     expect(activity.findAverageStairsAll('2019/06/19')).to.equal(14.2);
   })
 
-  it('should return the average steps of all users for a date', () => { 
+  it('should return the average steps of all users for a date', () => {
     expect(activity.findAverageStepsAll('2019/06/19')).to.equal(10322);
   })
 
