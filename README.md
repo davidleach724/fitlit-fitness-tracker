@@ -51,4 +51,4 @@ This websites offers multiple views depending on the user device, such as mobile
   - [Andrey Bermudez](https://github.com/Andrey-1992)
 
 ## Project Manager
-  - [Nik Seif](github.com/niksseif)
+  - [Nik Seif](https://github.com/niksseif)
