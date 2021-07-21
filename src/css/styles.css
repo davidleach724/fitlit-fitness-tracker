@@ -67,6 +67,12 @@ h2 {
   border-radius: 10px;
 }
 
+#userLogo:hover {
+  cursor: pointer;
+  background-color: white;
+  border-radius: 10px;
+}
+
 
 /* MEDIA QUERIES */
 /* 1025px and higher Desktops */
